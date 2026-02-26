@@ -1,0 +1,60 @@
+{
+  "baseline_run": {
+    "name": "baseline",
+    "total_requests": 4,
+    "success_count": 4,
+    "error_count": 0,
+    "success_rate_pct": 100.0,
+    "error_rate_pct": 0.0,
+    "duration_sec": 0.25,
+    "rps": 16.0,
+    "latency_p50_ms": 14.2,
+    "latency_p95_ms": 28.5,
+    "latency_p99_ms": 31.0
+  },
+  "stress_run": {
+    "name": "read_only",
+    "total_requests": 20,
+    "success_count": 20,
+    "error_count": 0,
+    "success_rate_pct": 100.0,
+    "error_rate_pct": 0.0,
+    "duration_sec": 1.02,
+    "rps": 19.61,
+    "latency_p50_ms": 48.2,
+    "latency_p95_ms": 82.1,
+    "latency_p99_ms": 95.0
+  },
+  "baseline_pass": true,
+  "reports": [
+    {
+      "name": "baseline",
+      "total_requests": 4,
+      "success_count": 4,
+      "error_count": 0,
+      "success_rate_pct": 100.0,
+      "error_rate_pct": 0.0,
+      "duration_sec": 0.25,
+      "rps": 16.0,
+      "latency_p50_ms": 14.2,
+      "latency_p95_ms": 28.5,
+      "latency_p99_ms": 31.0
+    },
+    {
+      "name": "read_only",
+      "total_requests": 20,
+      "success_count": 20,
+      "error_count": 0,
+      "success_rate_pct": 100.0,
+      "error_rate_pct": 0.0,
+      "duration_sec": 1.02,
+      "rps": 19.61,
+      "latency_p50_ms": 48.2,
+      "latency_p95_ms": 82.1,
+      "latency_p99_ms": 95.0
+    }
+  ],
+  "environment": {
+    "base_url": "http://127.0.0.1:8000"
+  }
+}

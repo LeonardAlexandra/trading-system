@@ -1,0 +1,12 @@
+{
+  "name": "phase11-pptx-build",
+  "version": "1.0.0",
+  "description": "Build Phase1.1 promotional PPT from PptxGenJS",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "pptxgenjs": "^3.12.0"
+  }
+}

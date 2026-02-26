@@ -1,0 +1,32 @@
+# Phase1.2 C4 告警规则示例（YAML）
+# 规则可配置；evaluate_rules 基于 get_metrics 与 check_all 结果评估。
+# 触发时写 log（LogRepository）且可选发邮件；同类型 1 分钟内只告警一次。
+
+rules:
+  - rule_id: db_down
+    condition: db_ok == false
+    level: CRITICAL
+    component: health
+    title: 数据库不可用
+    message_template: 健康检查发现 db_ok=false，请检查数据库连通性。
+
+  - rule_id: exchange_down
+    condition: exchange_ok == false
+    level: CRITICAL
+    component: health
+    title: 交易所/适配器不可达
+    message_template: 健康检查发现 exchange_ok=false，请检查交易所或 Paper 适配器。
+
+  - rule_id: error_rate_high
+    condition: error_rate > 0.1
+    level: WARNING
+    component: metrics
+    title: 错误率过高
+    message_template: 窗口内 error_rate={error_rate}，error_count={error_count}，请排查错误日志。
+
+  - rule_id: error_count_threshold
+    condition: error_count > 5
+    level: IMPORTANT
+    component: metrics
+    title: 错误条数超阈值
+    message_template: 窗口内 error_count={error_count}，请排查。

@@ -1,0 +1,42 @@
+# Phase 2.0 C5 历史数据导入代码检查日志
+日期: 2026-02-25
+检查人: Agent
+
+## 1. 目录结构检查 (scripts/)
+执行命令: `ls scripts/`
+输出:
+c9_backup_restore.sh
+c9_failure_recovery_drill.sh
+c9_stress_test.py
+init_db.sh
+phase10_seal_verify.sh
+phase11_stress_d6_20runs.sh
+phase12_a2_log_smoke_test.py
+phase12_a3_perf_log_smoke_test.py
+relay_tradingview_webhook.py
+reset_circuit_breaker.py
+run_execution_once.py
+verify_migration_downgrade_gate.sh
+
+结论: scripts 目录下无新增历史导入相关脚本。
+
+## 2. 关键代码关键词检索 (src/ & scripts/)
+执行命令: `grep -rEi "import|csv|history|upload|load_data" src/ scripts/ | grep -vE "import |from |logging|csv.py" | head -n 20`
+输出:
+src/execution/okx_client.py:except ImportError:
+src/monitoring/models.py:    level: str  # CRITICAL | IMPORTANT | WARNING | INFO
+src/monitoring/alert_system.py:            log_level = "ERROR" if level in ("CRITICAL", "IMPORTANT") else "WARNING"
+scripts/c9_stress_test.py:except ImportError:
+
+结论: 未发现任何实现历史数据解析或导入的业务逻辑。
+
+## 3. 文件名匹配检查
+执行命令: `find . -maxdepth 3 \( -name "*import*" -o -name "*history*" -o -name "*csv*" \)`
+输出:
+(排除 .venv 后的结果)
+./docs/Phase2.0_C5_历史数据假设与硬性待办.md
+
+结论: 仅发现交付文档，无导入代码文件。
+
+## 4. 总体结论
+Phase 2.0 C5 边界严格遵守：未实现历史数据导入代码。

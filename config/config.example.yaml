@@ -1,0 +1,38 @@
+# 交易所配置（Phase 1.0 固定）
+exchange:
+  name: "binance"  # 固定 1 家交易所
+  sandbox: true    # true=Paper Trading, false=实盘
+  api_key: "${EXCHANGE_API_KEY}"
+  api_secret: "${EXCHANGE_API_SECRET}"
+
+product_type: "spot"  # 固定 1 种产品形态，"spot" | "perp" 二选一
+
+# TradingView 配置
+tradingview:
+  webhook_secret: "${TV_WEBHOOK_SECRET}"
+
+# 策略配置
+strategy:
+  strategy_id: "MOCK_STRATEGY_V1"
+  config:
+    max_position_size: 0.1  # 最大仓位（BTC）
+    fixed_order_size: 0.01  # Mock 策略固定订单大小
+
+# 风控配置
+risk:
+  max_single_trade_risk: 0.01  # 单笔最大风险 1%
+  max_account_risk: 0.05       # 账户最大风险 5%
+
+# 数据库配置
+database:
+  url: "${DATABASE_URL}"
+  pool_size: 5
+  max_overflow: 10
+  pool_recycle: 3600
+
+# 日志配置
+logging:
+  level: "INFO"
+  file: "/var/log/trading_system/app.log"
+  database: true
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

@@ -1,0 +1,38 @@
+# Phase1.0 PR16：Docker Compose 单机部署（1 app + 1 DB）
+# 约束：workers=1，禁止扩容与多实例
+# 国内可设 DOCKER_MIRROR 使用镜像源（如 https://docker.1ms.run）规避拉取失败/403
+
+services:
+  db:
+    image: ${DOCKER_MIRROR:-docker.io}/library/postgres:15-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-trading}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-trading_secret}
+      POSTGRES_DB: ${POSTGRES_DB:-trading_system}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-trading} -d ${POSTGRES_DB:-trading_system}"]
+      interval: 3s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-trading}:${POSTGRES_PASSWORD:-trading_secret}@db:5432/${POSTGRES_DB:-trading_system}
+    command: ["uvicorn", "src.app.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1"]
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./logs:/app/logs
+
+volumes:
+  db_data:

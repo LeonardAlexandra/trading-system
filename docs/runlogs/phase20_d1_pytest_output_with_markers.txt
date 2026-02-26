@@ -1,0 +1,17 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.7, pytest-9.0.2, pluggy-1.6.0
+rootdir: /Users/zhangkuo/TradingView Indicator/trading_system
+configfile: pyproject.toml
+plugins: anyio-4.12.1, asyncio-1.3.0, cov-7.0.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=function, asyncio_default_test_loop_scope=function
+collected 1 item
+
+tests/e2e/test_e2e_phase2_main_flow.py D1_PHASE12_COUNTS_BEFORE={"decision_snapshot": 0, "execution_events": 0, "log": 0, "trade": 3}
+D1_PHASE12_WRITE_SQL_COUNT=0
+D1_TOTAL_WRITE_SQL_DURING_FLOW=2
+D1_QUERY_COUNTS={"evaluated_at": 1, "param_version": 1, "strategy_version": 1}
+D1_REPORT_SAMPLE_JSON={"baseline_version_id": null, "comparison_summary": null, "conclusion": "pass", "constraint_definition": {"custom": null, "max_drawdown_pct": 1000, "max_risk_exposure": null, "min_trade_count": 1}, "evaluated_at": "2026-02-26T08:04:41.306345", "objective_definition": {"primary": "pnl", "primary_weight": 1.0, "secondary": [], "secondary_weights": []}, "param_version_id": "D1-P1", "strategy_id": "D1-STRATEGY", "strategy_version_id": "D1-V1"}
+D1_PHASE12_COUNTS_AFTER={"decision_snapshot": 0, "execution_events": 0, "log": 0, "trade": 3}
+.
+
+============================== 1 passed in 0.06s ===============================

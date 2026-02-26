@@ -1,0 +1,59 @@
+========== Phase1.0 封版校验实跑输出 ==========
+执行时间: 2026-02-04
+执行环境: Docker Daemon 已启动，项目根目录
+
+----------------------------------------
+【A-1】docker compose build + up -d
+----------------------------------------
+(见 Phase1.0_最终封版校验材料.md 中【A-1】段)
+
+----------------------------------------
+【A-2】docker compose ps
+----------------------------------------
+NAME                   IMAGE                COMMAND                  SERVICE   CREATED          STATUS                    PORTS
+trading_system-app-1   trading_system-app   "uvicorn src.app.mai…"   app       19 seconds ago   Up 12 seconds             0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+trading_system-db-1    postgres:15-alpine   "docker-entrypoint.s…"   db        19 seconds ago   Up 18 seconds (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+
+----------------------------------------
+【A-3】docker compose logs app --tail=200
+----------------------------------------
+app-1  | INFO:     Started server process [1]
+app-1  | INFO:     Waiting for application startup.
+app-1  | 2026-02-04 05:33:30,066 - src.app.main - INFO - Application started
+app-1  | INFO:     Application startup complete.
+app-1  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+
+----------------------------------------
+【B】pg_isready + init_db.sh
+----------------------------------------
+>>> docker compose exec db pg_isready -U trading -d trading_system
+/var/run/postgresql:5432 - accepting connections
+
+>>> docker compose run --rm app bash scripts/init_db.sh
+ Container trading_system-db-1  Running
+[init_db] Waiting for database to be ready...
+[init_db] alembic upgrade head succeeded.
+
+----------------------------------------
+【C】curl http://localhost:8000/openapi.json
+----------------------------------------
+HTTP_STATUS:200
+{"openapi":"3.1.0","info":{"title":"Trading System API","version":"0.1.0"},"paths":{"/healthz":{...},"/webhook/tradingview":{...}}}
+
+----------------------------------------
+【D】docker compose down -v
+----------------------------------------
+ Container trading_system-app-1  Stopping
+ Container trading_system-app-1  Stopped
+ Container trading_system-app-1  Removing
+ Container trading_system-app-1  Removed
+ Container trading_system-db-1  Stopping
+ Container trading_system-db-1  Stopped
+ Container trading_system-db-1  Removing
+ Container trading_system-db-1  Removed
+ Network trading_system_default  Removing
+ Volume trading_system_db_data  Removing
+ Volume trading_system_db_data  Removed
+ Network trading_system_default  Removed
+
+========== 校验脚本执行结束 ==========

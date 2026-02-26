@@ -1,0 +1,28 @@
+=== GET /dashboard ===
+$ curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8000/dashboard
+200
+
+$ curl -s http://127.0.0.1:8000/dashboard | head -c 700
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard</title>
+  ...
+  <section id="decisions">
+    <h2>决策列表</h2>
+    ...
+  <section id="executions">
+    <h2>执行/成交列表</h2>
+    ...
+  <section id="summary">
+    <h2>汇总</h2>
+    ...
+  <section id="health">
+    <h2>健康状态</h2>
+    ...
+
+=== GET /api/dashboard/summary（与页面汇总块一致）===
+$ curl -s http://127.0.0.1:8000/api/dashboard/summary
+[]

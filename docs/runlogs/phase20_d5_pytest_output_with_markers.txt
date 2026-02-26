@@ -1,0 +1,27 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.7, pytest-9.0.2, pluggy-1.6.0
+rootdir: /Users/zhangkuo/TradingView Indicator/trading_system
+configfile: pyproject.toml
+plugins: anyio-4.12.1, asyncio-1.3.0, cov-7.0.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=function, asyncio_default_test_loop_scope=function
+collected 1 item
+
+tests/e2e/test_e2e_phase2_trace_integrity.py D5_PHASE12_COUNTS_BEFORE={"decision_order_map": 4, "decision_snapshot": 2, "dedup_signal": 4, "execution_events": 0, "log": 0, "trade": 0}
+2026-02-26 16:54:02,553 - src.app.main - INFO - Application started
+2026-02-26 16:54:02,562 - httpx - INFO - HTTP Request: GET http://testserver/api/trace/decision/d5-dec-no-exec "HTTP/1.1 200 OK"
+D5_RESPONSE_SC1={"decision": {"created_at": "2026-02-26T08:54:02.532078", "decision_id": "d5-dec-no-exec", "quantity": "0.01000000", "reason": null, "reserved_at": "2026-02-26T08:54:02", "side": "BUY", "signal_id": "d5-sig-no-exec", "status": "RESERVED", "strategy_id": "D5_TRACE_STRAT", "symbol": "BTCUSDT"}, "decision_snapshot": {"created_at": "2026-02-26T08:54:02.532078", "decision_id": "d5-dec-no-exec", "decision_result": {"status": "reserved"}, "id": 1, "position_state": {}, "risk_check_result": {"allowed": true}, "signal_state": {"signal_id": "d5-sig-no-exec"}, "strategy_id": "D5_TRACE_STRAT"}, "missing_nodes": ["execution", "trade"], "signal": {"action": "BUY", "created_at": "2026-02-26T08:54:02", "first_seen_at": "2026-02-26T08:54:02.532078", "processed": false, "received_at": "2026-02-26T08:54:02.532078", "signal_id": "d5-sig-no-exec", "symbol": "BTCUSDT"}, "trace_status": "PARTIAL"}
+2026-02-26 16:54:02,565 - httpx - INFO - HTTP Request: GET http://testserver/api/trace/decision/d5-dec-no-snapshot "HTTP/1.1 200 OK"
+D5_RESPONSE_SC2={"decision": {"created_at": "2026-02-26T08:54:02.532078", "decision_id": "d5-dec-no-snapshot", "quantity": "0.10000000", "reason": null, "reserved_at": "2026-02-26T08:54:02", "side": "SELL", "signal_id": "d5-sig-no-snapshot", "status": "RESERVED", "strategy_id": "D5_TRACE_STRAT", "symbol": "ETHUSDT"}, "missing_nodes": ["decision_snapshot", "execution", "trade"], "signal": {"action": "SELL", "created_at": "2026-02-26T08:54:02", "first_seen_at": "2026-02-26T08:54:02.532078", "processed": false, "received_at": "2026-02-26T08:54:02.532078", "signal_id": "d5-sig-no-snapshot", "symbol": "ETHUSDT"}, "trace_status": "PARTIAL"}
+2026-02-26 16:54:02,568 - httpx - INFO - HTTP Request: GET http://testserver/api/trace/decision/d5-dec-exec-no-trade "HTTP/1.1 200 OK"
+D5_RESPONSE_SC3={"decision": {"created_at": "2026-02-26T08:54:02.532078", "decision_id": "d5-dec-exec-no-trade", "quantity": "0.02000000", "reason": null, "reserved_at": "2026-02-26T08:54:02", "side": "BUY", "signal_id": "d5-sig-exec-no-trade", "status": "FILLED", "strategy_id": "D5_TRACE_STRAT", "symbol": "BTCUSDT"}, "decision_snapshot": {"created_at": "2026-02-26T08:54:02.532078", "decision_id": "d5-dec-exec-no-trade", "decision_result": {"status": "filled"}, "id": 2, "position_state": {}, "risk_check_result": {"allowed": true}, "signal_state": {"signal_id": "d5-sig-exec-no-trade"}, "strategy_id": "D5_TRACE_STRAT"}, "execution": {"decision_id": "d5-dec-exec-no-trade", "exchange_order_id": "d5-order-1", "execution_id": "d5-dec-exec-no-trade", "local_order_id": null, "order_id": "d5-order-1", "status": "FILLED", "updated_at": "2026-02-26T08:54:02"}, "missing_nodes": ["trade"], "signal": {"action": "BUY", "created_at": "2026-02-26T08:54:02", "first_seen_at": "2026-02-26T08:54:02.532078", "processed": false, "received_at": "2026-02-26T08:54:02.532078", "signal_id": "d5-sig-exec-no-trade", "symbol": "BTCUSDT"}, "trace_status": "PARTIAL"}
+2026-02-26 16:54:02,570 - httpx - INFO - HTTP Request: GET http://testserver/api/trace/signal/d5-sig-not-exist "HTTP/1.1 404 Not Found"
+D5_RESPONSE_SC4=HTTP_404
+2026-02-26 16:54:02,573 - httpx - INFO - HTTP Request: GET http://testserver/api/trace/decision/d5-dec-failed "HTTP/1.1 200 OK"
+D5_RESPONSE_FAILED={"decision": {"created_at": "2026-02-26T08:54:02.532078", "decision_id": "d5-dec-failed", "quantity": "0.03000000", "reason": null, "reserved_at": "2026-02-26T08:54:02", "side": "BUY", "signal_id": "d5-sig-failed", "status": "FAILED", "strategy_id": "D5_TRACE_STRAT", "symbol": "BTCUSDT"}, "missing_nodes": ["decision_snapshot", "execution", "trade"], "missing_reason": {"failed_reason": "risk_gate_failed"}, "signal": {"action": "BUY", "created_at": "2026-02-26T08:54:02", "first_seen_at": "2026-02-26T08:54:02.532078", "processed": false, "received_at": "2026-02-26T08:54:02.532078", "signal_id": "d5-sig-failed", "symbol": "BTCUSDT"}, "trace_status": "FAILED"}
+2026-02-26 16:54:02,574 - src.app.main - INFO - Application shutdown
+2026-02-26 16:54:02,575 - src.app.main - INFO - Database engine disposed
+D5_TRACE_WRITE_SQL_COUNT=0
+D5_PHASE12_COUNTS_AFTER={"decision_order_map": 4, "decision_snapshot": 2, "dedup_signal": 4, "execution_events": 0, "log": 0, "trade": 0}
+.
+
+============================== 1 passed in 0.58s ===============================

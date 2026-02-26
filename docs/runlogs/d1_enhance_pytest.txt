@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.11, pytest-9.0.2, pluggy-1.5.0 -- /Users/zhangkuo/miniconda3/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/zhangkuo/TradingView Indicator/trading_system
+configfile: pyproject.toml
+plugins: anyio-4.12.1, asyncio-1.3.0, cov-7.0.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=function, asyncio_default_test_loop_scope=function
+collecting ... collected 1 item
+
+tests/integration/test_phase12_d1_e2e_core_flow.py::test_d1_e2e_core_flow PASSED [100%]
+
+============================== 1 passed in 0.52s ===============================

@@ -1,0 +1,34 @@
+[cmd] git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.cursor/
+	.cursor_tasks/
+	.dockerignore
+	.enhanced_evidence_monitor.json
+	.env.example
+	.evidence_pack_monitor.json
+	.gitignore
+	Dockerfile
+	README.md
+	alembic.ini
+	alembic/
+	config/
+	docker-compose.yml
+	docs/
+	pyproject.toml
+	scripts/
+	src/
+	tests/
+	trading_system.db.c9_drill_backup
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+[cmd] git diff --name-only
+
+[cmd] git diff alembic/versions/023_phase21_a1_release_gate_status_expand.py
+
+[cmd] cross-module check: git diff --name-only | rg "^(src/models/|src/repositories/)" || true

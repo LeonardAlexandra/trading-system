@@ -1,0 +1,245 @@
+# Tech Debt and Gate Registry
+# All entries must be status: DONE before sealing the target_phase.
+# If current Phase == target_phase and status != DONE, sealing MUST fail.
+# If status == DONE, evidence_refs MUST NOT be empty.
+# GATE- items must be DONE regardless of the phase.
+
+- id: TD-RUN-MODEL-01
+  title: "分布式告警冷却去重"
+  category: PERFORMANCE
+  target_phase: "2.1"
+  target_module: "Phase2.1:D7-TECHDEBT-ALARM"
+  ac_mapping:
+    module_ac_id: AC-RUN-MODEL-01
+    module_section: "Phase2.1:D7"
+  solution_plan:
+    - step: "引入 Redis 作为分布式锁与计数器事实源"
+      files_or_components: ["src/services/alarm_service.py"]
+      change_type: "modify"
+      risk_notes: "需处理 Redis 连接失败降级回进程内去重的策略"
+  acceptance:
+    - ac_id: AC-RUN-MODEL-01
+      verify_by: integration_test
+      command: "pytest tests/integration/test_alarm_deduplication.py -v"
+      expected: "test_multi_instance_deduplication PASSED"
+  evidence_required: ["修改文件清单", "测试文件", "测试命令", "原始输出"]
+  evidence_refs: []
+  status: TODO
+  owner: TBD
+  last_updated: "2026-02-25"
+
+- id: TD-RUN-MODEL-02
+  title: "告警冷却状态持久化"
+  category: STABILITY
+  target_phase: "2.1"
+  target_module: "Phase2.1:D7-TECHDEBT-ALARM"
+  ac_mapping:
+    module_ac_id: AC-RUN-MODEL-02
+    module_section: "Phase2.1:D7"
+  solution_plan:
+    - step: "将冷却窗口结束时间戳持久化至 DB"
+      files_or_components: ["src/repositories/alarm_repository.py"]
+      change_type: "add"
+      risk_notes: "需注意 DB 写入延迟对高频告警去重的影响"
+  acceptance:
+    - ac_id: AC-RUN-MODEL-02
+      verify_by: unit_test
+      command: "pytest tests/unit/test_alarm_persistence.py -v"
+      expected: "test_state_not_lost_after_restart PASSED"
+  evidence_required: ["修改文件清单", "测试命令", "原始输出"]
+  evidence_refs: []
+  status: TODO
+  owner: TBD
+  last_updated: "2026-02-25"
+
+- id: TD-RUN-MODEL-03
+  title: "自动化规则评估触发"
+  category: PERFORMANCE
+  target_phase: "2.1"
+  target_module: "Phase2.1:D7-TECHDEBT-ALARM"
+  ac_mapping:
+    module_ac_id: AC-RUN-MODEL-03
+    module_section: "Phase2.1:D7"
+  solution_plan:
+    - step: "集成 APScheduler 模块在 execution worker 中运行"
+      files_or_components: ["src/worker/scheduler.py"]
+      change_type: "add"
+      risk_notes: "多实例下需防止调度冲突"
+  acceptance:
+    - ac_id: AC-RUN-MODEL-03
+      verify_by: e2e
+      command: "python3 scripts/verify_scheduler.py"
+      expected: "Scheduler heartbeat detected"
+  evidence_required: ["调度运行日志", "原始输出"]
+  evidence_refs: []
+  status: TODO
+  owner: TBD
+  last_updated: "2026-02-25"
+
+- id: TD-PERF-ISOLATION-01
+  title: "Perf 写入故障隔离"
+  category: PERFORMANCE
+  target_phase: "2.1"
+  target_module: "Phase2.1:D8-TECHDEBT-PERF"
+  ac_mapping:
+    module_ac_id: AC-PERF-ISOLATION-01
+    module_section: "Phase2.1:D8"
+  solution_plan:
+    - step: "使用异步任务队列隔离 Perf 写入"
+      files_or_components: ["src/services/perf_service.py"]
+      change_type: "modify"
+      risk_notes: "需确保异步失败后仍有审计日志"
+  acceptance:
+    - ac_id: AC-PERF-ISOLATION-01
+      verify_by: integration_test
+      command: "pytest tests/integration/test_perf_isolation.py -v"
+      expected: "test_webhook_success_on_perf_failure PASSED"
+  evidence_required: ["故障注入测试报告", "原始输出"]
+  evidence_refs: []
+  status: TODO
+  owner: TBD
+  last_updated: "2026-02-25"
+
+- id: TD-AUDIT-XSS-01
+  title: "审计页面 XSS 修复"
+  category: SECURITY
+  target_phase: "2.0"
+  target_module: "Phase2.0:D6-TECHDEBT-SECURITY"
+  ac_mapping:
+    module_ac_id: AC-AUDIT-WEB-XSS-01
+    module_section: "Phase2.0:D6"
+  solution_plan:
+    - step: "使用浏览器内置 DOM API (textContent) 实现强制安全渲染"
+      files_or_components: ["src/app/routers/audit_page.py"]
+      change_type: "modify"
+      risk_notes: "无"
+  acceptance:
+    - ac_id: AC-AUDIT-WEB-XSS-01
+      verify_by: unit_test
+      command: "pytest tests/unit/test_security_rendering.py -v"
+      expected: "test_field_rendered_with_textContent PASSED"
+  evidence_required: ["代码行为证据", "原始输出"]
+  evidence_refs: ["docs/Phase2.0_D6_证据包.md"]
+  status: DONE
+  owner: TBD
+  last_updated: "2026-02-25"
+
+- id: TD-TRACE-404-01
+  title: "失败决策可追溯化"
+  category: SECURITY
+  target_phase: "2.0"
+  target_module: "Phase2.0:D7-TECHDEBT-TRACE"
+  ac_mapping:
+    module_ac_id: AC-D2-TRACE-404-01
+    module_section: "Phase2.0:D7"
+  solution_plan:
+    - step: "修改 Trace API 聚合 FAILED 状态的 decision_snapshot"
+      files_or_components: ["src/services/trace_service.py"]
+      change_type: "modify"
+      risk_notes: "需处理快照缺失场景"
+  acceptance:
+    - ac_id: AC-D2-TRACE-404-01
+      verify_by: integration_test
+      command: "pytest tests/integration/test_failed_trace.py -v"
+      expected: "test_get_trace_for_failed_decision PASSED"
+  evidence_required: ["API 响应样本", "原始输出"]
+  evidence_refs: ["docs/Phase2.0_D7_证据包.md"]
+  status: DONE
+  owner: TBD
+  last_updated: "2026-02-25"
+
+- id: TD-HEALTH-OBS-01
+  title: "健康检查可观测性升级"
+  category: OBSERVABILITY
+  target_phase: "2.0"
+  target_module: "Phase2.0:D8-TECHDEBT-HEALTH"
+  ac_mapping:
+    module_ac_id: AC-D2-HEALTH-OBS-01
+    module_section: "Phase2.0:D8"
+  solution_plan:
+    - step: "实现 Prometheus 规范的 Health 暴露接口"
+      files_or_components: ["src/web/api/health.py"]
+      change_type: "add"
+      risk_notes: "无"
+  acceptance:
+    - ac_id: AC-D2-HEALTH-OBS-01
+      verify_by: unit_test
+      command: "pytest tests/unit/test_health_check.py -v"
+      expected: "test_health_metrics_format PASSED"
+  evidence_required: ["接口测试报告", "原始输出"]
+  evidence_refs: ["docs/Phase2.0_D8_证据包.md"]
+  status: DONE
+  owner: TBD
+  last_updated: "2026-02-26"
+
+- id: TD-STRESS-DB-01
+  title: "生产等价压测环境搭建"
+  category: STABILITY
+  target_phase: "2.2"
+  target_module: "Phase2.2:D3-TECHDEBT-STABILITY"
+  ac_mapping:
+    module_ac_id: AC-C9-STRESS-DB-01
+    module_section: "Phase2.2:D3"
+  solution_plan:
+    - step: "在独立隔离环境搭建与生产配置一致的 PG 集群"
+      files_or_components: ["infra/docker-compose.stress.yaml"]
+      change_type: "add"
+      risk_notes: "压测环境必须与生产网络物理隔离"
+  acceptance:
+    - ac_id: AC-C9-STRESS-DB-01
+      verify_by: integration_test
+      command: "python3 scripts/run_stress_test.py --env stress"
+      expected: "Stress test completed on production-equivalent DB"
+  evidence_required: ["压测报告", "环境说明"]
+  evidence_refs: []
+  status: TODO
+  owner: TBD
+  last_updated: "2026-02-25"
+
+- id: TD-FAILURE-DRILL-01
+  title: "自动化故障恢复演练"
+  category: STABILITY
+  target_phase: "2.2"
+  target_module: "Phase2.2:D3-TECHDEBT-STABILITY"
+  ac_mapping:
+    module_ac_id: AC-C9-FAILURE-DRILL-01
+    module_section: "Phase2.2:D3"
+  solution_plan:
+    - step: "编写 Chaos 脚本模拟执行端中断并验证自动恢复"
+      files_or_components: ["scripts/failure_drill.py"]
+      change_type: "add"
+      risk_notes: "需确保演练不影响正常流水"
+  acceptance:
+    - ac_id: AC-C9-FAILURE-DRILL-01
+      verify_by: e2e
+      command: "python3 scripts/failure_drill.py --verify"
+      expected: "Recovery verification PASSED"
+  evidence_required: ["演练日志", "原始输出"]
+  evidence_refs: []
+  status: TODO
+  owner: TBD
+  last_updated: "2026-02-25"
+
+- id: TD-BACKUP-VERIFY-01
+  title: "Schema-aware 备份校验"
+  category: STABILITY
+  target_phase: "2.2"
+  target_module: "Phase2.2:D3-TECHDEBT-STABILITY"
+  ac_mapping:
+    module_ac_id: AC-C9-BACKUP-VERIFY-01
+    module_section: "Phase2.2:D3"
+  solution_plan:
+    - step: "开发备份自动恢复与 Schema 完整性比对工具"
+      files_or_components: ["scripts/verify_backup.py"]
+      change_type: "add"
+      risk_notes: "无"
+  acceptance:
+    - ac_id: AC-C9-BACKUP-VERIFY-01
+      verify_by: unit_test
+      command: "python3 scripts/verify_backup.py --test"
+      expected: "Backup integrity check PASSED"
+  evidence_required: ["备份校验报告", "原始输出"]
+  evidence_refs: []
+  status: TODO
+  owner: TBD
+  last_updated: "2026-02-25"

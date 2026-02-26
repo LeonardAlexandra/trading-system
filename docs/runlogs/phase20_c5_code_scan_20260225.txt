@@ -1,0 +1,40 @@
+# Phase 2.0 C5 代码扫描报告
+日期: 2026-02-25
+扫描环境: macOS / trading_system
+
+## 1. 不存在历史数据导入实现
+命令: `grep -rEi "history|import_trade|csv_reader|load_trades" src/ scripts/ | grep -vE "ImportError|import |from "`
+输出: (无输出)
+
+## 2. 不存在冷却去重持久化实现
+命令: `grep -rEi "redis|cooling|dedup_persistence" src/ | grep -vE "ImportError|import |from "`
+输出: (无输出)
+
+## 3. 不存在调度实现
+命令: `grep -rEi "scheduler|cron|job_queue" src/ | grep -vE "ImportError|import |from "`
+输出:
+src/trading_system.egg-info/PKG-INFO:Requires-Dist: apscheduler>=3.10.0
+src/trading_system.egg-info/requires.txt:apscheduler>=3.10.0
+说明: 仅为依赖声明，无业务调度代码实现。
+
+## 4. 不存在 perf 隔离实现
+命令: `grep -rEi "perf_isolation|outbox|queue_worker" src/ | grep -vE "ImportError|import |from "`
+输出: (无输出)
+
+## 5. 不存在 audit 优化实现
+命令: `grep -rEi "batch_query|audit_optimization|n_plus_1" src/ | grep -vE "ImportError|import |from "`
+输出: (无输出)
+
+## 6. 不存在 C9 自动化实现
+命令: `grep -rEi "failure_drill|stress_db|backup_verify" src/ scripts/ | grep -vE "ImportError|import |from "`
+输出:
+scripts/c9_failure_recovery_drill.sh:LOG1="$OUT_DIR/c9_failure_drill_scenario1_$TS.log"
+scripts/c9_failure_recovery_drill.sh:LOG2="$OUT_DIR/c9_failure_drill_scenario2_$TS.log"
+说明: 该脚本为 Phase 1.2 既有脚本，非 Phase 2.0 新增自动化实现。
+
+## 7. 不存在 D2 trace 修复实现
+命令: `grep -rEi "trace_fix|failed_decision_trace" src/ | grep -vE "ImportError|import |from "`
+输出: (无输出)
+
+## 8. 结论
+仓库中未发现任何与 C5 附录相关的 Phase 2.1 或 Phase 2.x 代码实现，符合 Phase 2.0 边界声明。

@@ -1,0 +1,19 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.11, pytest-9.0.2, pluggy-1.5.0 -- /Users/zhangkuo/miniconda3/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/zhangkuo/TradingView Indicator/trading_system
+configfile: pyproject.toml
+plugins: anyio-4.12.1, asyncio-1.3.0, cov-7.0.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=function, asyncio_default_test_loop_scope=function
+collecting ... collected 8 items
+
+tests/integration/test_phase12_c7_perf_log.py::test_perf_log_repository_write_and_query PASSED [ 12%]
+tests/integration/test_phase12_c7_perf_log.py::test_perf_log_query_limit_cap PASSED [ 25%]
+tests/integration/test_phase12_c7_perf_log.py::test_perf_log_no_write_to_log_table PASSED [ 37%]
+tests/integration/test_phase12_c7_perf_log.py::test_perf_log_writer_write_once_commits_independently PASSED [ 50%]
+tests/integration/test_phase12_c7_perf_log.py::test_signal_receiver_writes_perf_log PASSED [ 62%]
+tests/integration/test_phase12_c7_perf_log.py::test_trace_query_writes_perf_log PASSED [ 75%]
+tests/integration/test_phase12_c7_perf_log.py::test_execution_engine_writes_perf_log PASSED [ 87%]
+tests/integration/test_phase12_c7_perf_log.py::test_signal_service_writes_perf_when_accepted PASSED [100%]
+
+============================== 8 passed in 0.68s ===============================

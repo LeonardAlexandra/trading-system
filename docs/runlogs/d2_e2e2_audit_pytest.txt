@@ -1,0 +1,13 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.7, pytest-9.0.2, pluggy-1.6.0 -- /Library/Frameworks/Python.framework/Versions/3.11/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/zhangkuo/TradingView Indicator/trading_system
+configfile: pyproject.toml
+plugins: anyio-4.12.1, asyncio-1.3.0, cov-7.0.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=function, asyncio_default_test_loop_scope=function
+collecting ... collected 2 items
+
+tests/integration/test_phase12_d2_audit_verification.py::test_d2_audit_log_contains_failure_event PASSED [ 50%]
+tests/integration/test_phase12_d2_audit_verification.py::test_d2_audit_query_filter_by_time_component_level PASSED [100%]
+
+============================== 2 passed in 0.66s ===============================

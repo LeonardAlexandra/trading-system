@@ -1,0 +1,121 @@
+=== Phase2.0 A1 迁移验收：upgrade / downgrade / upgrade 幂等（完整原始输出）===
+日期：2026-02-14
+说明：以下为真实执行的命令与完整 stdout/stderr，无删节。
+
+---------- 【D】环境与命令原文（与证据包【D】一致）----------
+DATABASE_URL 取值（执行时在命令中显式传入，未 export）：
+  sqlite:////Users/zhangkuo/TradingView Indicator/trading_system/phase20_a1_test.db
+
+三条 alembic 命令原文：
+  1) DATABASE_URL="sqlite:////Users/zhangkuo/TradingView Indicator/trading_system/phase20_a1_test.db" alembic upgrade head
+  2) DATABASE_URL="sqlite:////Users/zhangkuo/TradingView Indicator/trading_system/phase20_a1_test.db" alembic downgrade 020
+  3) DATABASE_URL="sqlite:////Users/zhangkuo/TradingView Indicator/trading_system/phase20_a1_test.db" alembic upgrade head
+
+sqlite3 使用的 db 文件：在项目根（trading_system）下执行 sqlite3 phase20_a1_test.db，即与 DATABASE_URL 指向同一文件（绝对路径：/Users/zhangkuo/TradingView Indicator/trading_system/phase20_a1_test.db）。
+
+---------- 1) 首次 upgrade head（完整 stdout）----------
+命令：
+  DATABASE_URL="sqlite:////Users/zhangkuo/TradingView Indicator/trading_system/phase20_a1_test.db" alembic upgrade head
+
+输出（stdout）：
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade  -> 001, Initial schema for PR2 (dedup_signal, decision_order_map, orders)
+INFO  [alembic.runtime.migration] Running upgrade 001 -> 002, PR6: decision_order_map 执行层扩展字段
+INFO  [alembic.runtime.migration] Running upgrade 002 -> 003, decision_order_map.quantity 改为 Numeric(20, 8)
+INFO  [alembic.runtime.migration] Running upgrade 003 -> 004, PR8: execution_events 表
+INFO  [alembic.runtime.migration] Running upgrade 004 -> 005, PR8 审阅：execution_events (decision_id, created_at) 复合索引
+INFO  [alembic.runtime.migration] Running upgrade 005 -> 006, PR9: balances, positions, risk_state 表
+INFO  [alembic.runtime.migration] Running upgrade 006 -> 007, PR11: positions 表增加 strategy_id，主键改为 (strategy_id, symbol)，按策略隔离
+INFO  [alembic.runtime.migration] Running upgrade 007 -> 008, PR13: execution_events 增加 account_id / exchange_profile / dry_run
+INFO  [alembic.runtime.migration] Running upgrade 008 -> 009, PR14a: rate_limit_state, circuit_breaker_state 表 + execution_events.live_enabled
+INFO  [alembic.runtime.migration] Running upgrade 009 -> 010, PR16: execution_events.rehearsal（演练模式追溯）
+INFO  [alembic.runtime.migration] Running upgrade 010 -> 011, PR2 封版补齐：trade 表（交易记录表）
+INFO  [alembic.runtime.migration] Running upgrade 011 -> 012, PR2/MVP 封版补齐：dedup_signal.processed 字段
+INFO  [alembic.runtime.migration] Running upgrade 012 -> 013, A1: strategy_runtime_state 互斥锁字段 + TTL 支撑
+INFO  [alembic.runtime.migration] Running upgrade 013 -> 014, A2: trade 表 EXTERNAL_SYNC 来源支持（幂等键 strategy_id + external_trade_id）
+INFO  [alembic.runtime.migration] Running upgrade 014 -> 015, A3: position_reconcile_log 表（external_trade_id + event_type 封闭枚举）
+INFO  [alembic.runtime.migration] Running upgrade 015 -> 016, C3: position_reconcile_log 增加 price_tier 列（定价档位落盘可追溯）
+INFO  [alembic.runtime.migration] Running upgrade 016 -> 017, C5: strategy_runtime_state.status, position_reconcile_log.diff_snapshot, signal_rejection 表
+INFO  [alembic.runtime.migration] Running upgrade 017 -> 018, Phase1.2 A1: decision_snapshot 表（决策输入快照，落实 0.4）
+INFO  [alembic.runtime.migration] Running upgrade 018 -> 019, Phase1.2 A2: log 表（审计/操作/错误日志）
+INFO  [alembic.runtime.migration] Running upgrade 019 -> 020, Phase1.2 A3: perf_log 表（性能日志，1.2b）
+INFO  [alembic.runtime.migration] Running upgrade 020 -> 021, Phase2.0 A1: metrics_snapshot 表（指标快照，Phase 2.0 自有）
+
+stderr：（无）
+Exit code: 0
+
+---------- 2) downgrade 021 -> 020（完整 stdout）----------
+命令：
+  DATABASE_URL="sqlite:////Users/zhangkuo/TradingView Indicator/trading_system/phase20_a1_test.db" alembic downgrade 020
+
+输出（stdout）：
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running downgrade 021 -> 020, Phase2.0 A1: metrics_snapshot 表（指标快照，Phase 2.0 自有）
+
+stderr：（无）
+Exit code: 0
+
+---------- 3) 再次 upgrade head（幂等，完整 stdout）----------
+命令：
+  DATABASE_URL="sqlite:////Users/zhangkuo/TradingView Indicator/trading_system/phase20_a1_test.db" alembic upgrade head
+
+输出（stdout）：
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade 020 -> 021, Phase2.0 A1: metrics_snapshot 表（指标快照，Phase 2.0 自有）
+
+stderr：（无）
+Exit code: 0
+
+---------- 4) sqlite3 .schema metrics_snapshot（完整输出，修 id 自增后：id 为 INTEGER）----------
+命令：
+  sqlite3 phase20_a1_test.db ".schema metrics_snapshot"
+
+输出：
+CREATE TABLE metrics_snapshot (
+	id INTEGER NOT NULL, 
+	strategy_id VARCHAR(64) NOT NULL, 
+	strategy_version_id VARCHAR(64) NOT NULL, 
+	param_version_id VARCHAR(64), 
+	period_start DATETIME NOT NULL, 
+	period_end DATETIME NOT NULL, 
+	trade_count INTEGER NOT NULL, 
+	win_rate NUMERIC(18, 6), 
+	realized_pnl NUMERIC(20, 8) NOT NULL, 
+	max_drawdown NUMERIC(20, 8), 
+	avg_holding_time_sec NUMERIC(18, 6), 
+	created_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL, 
+	PRIMARY KEY (id)
+);
+CREATE INDEX idx_metrics_snapshot_strategy_period ON metrics_snapshot (strategy_id, period_start, period_end);
+CREATE INDEX idx_metrics_snapshot_strategy_version ON metrics_snapshot (strategy_id, strategy_version_id);
+CREATE INDEX idx_metrics_snapshot_version_param_period ON metrics_snapshot (strategy_version_id, param_version_id, period_start);
+
+Exit code: 0
+
+---------- 5) sqlite3 查询 metrics_snapshot 索引列表（完整输出）----------
+命令：
+  sqlite3 phase20_a1_test.db "SELECT name FROM sqlite_master WHERE type='index' AND tbl_name='metrics_snapshot';"
+
+输出：
+sqlite_autoindex_metrics_snapshot_1
+idx_metrics_snapshot_strategy_period
+idx_metrics_snapshot_strategy_version
+idx_metrics_snapshot_version_param_period
+
+Exit code: 0
+
+---------- 6) rg 反证：迁移仅操作 metrics_snapshot（禁止对 Phase1.2 表写操作）----------
+命令：
+  rg -n "op\.(create_table|drop_table|add_column|drop_column|execute)\(" alembic/versions/021_phase20_a1_metrics_snapshot.py
+
+输出：
+23:    op.create_table(
+65:    op.drop_table("metrics_snapshot")
+
+结论：仅出现 create_table（表名在脚本中为 "metrics_snapshot"）与 drop_table("metrics_snapshot")，无 add_column/drop_column/execute，无任何 Phase1.2 表名；可证明本迁移仅触及 metrics_snapshot 表。
+
+---------- 7) SQLite 自增主键插入验证 ----------
+说明：upgrade 后不传 id 插入 2 行及 downgrade/upgrade 后再次插入验证的完整原始输出见证据包【G】。

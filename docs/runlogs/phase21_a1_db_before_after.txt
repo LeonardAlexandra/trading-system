@@ -1,0 +1,44 @@
+[env] DATABASE_URL=sqlite+aiosqlite:////Users/zhangkuo/TradingView Indicator/trading_system/tmp_phase21_a1_db_compare.db
+[cmd] reset db
+removed_old_db /Users/zhangkuo/TradingView Indicator/trading_system/tmp_phase21_a1_db_compare.db
+[cmd] alembic upgrade 022
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade  -> 001, Initial schema for PR2 (dedup_signal, decision_order_map, orders)
+INFO  [alembic.runtime.migration] Running upgrade 001 -> 002, PR6: decision_order_map 执行层扩展字段
+INFO  [alembic.runtime.migration] Running upgrade 002 -> 003, decision_order_map.quantity 改为 Numeric(20, 8)
+INFO  [alembic.runtime.migration] Running upgrade 003 -> 004, PR8: execution_events 表
+INFO  [alembic.runtime.migration] Running upgrade 004 -> 005, PR8 审阅：execution_events (decision_id, created_at) 复合索引
+INFO  [alembic.runtime.migration] Running upgrade 005 -> 006, PR9: balances, positions, risk_state 表
+INFO  [alembic.runtime.migration] Running upgrade 006 -> 007, PR11: positions 表增加 strategy_id，主键改为 (strategy_id, symbol)，按策略隔离
+INFO  [alembic.runtime.migration] Running upgrade 007 -> 008, PR13: execution_events 增加 account_id / exchange_profile / dry_run
+INFO  [alembic.runtime.migration] Running upgrade 008 -> 009, PR14a: rate_limit_state, circuit_breaker_state 表 + execution_events.live_enabled
+INFO  [alembic.runtime.migration] Running upgrade 009 -> 010, PR16: execution_events.rehearsal（演练模式追溯）
+INFO  [alembic.runtime.migration] Running upgrade 010 -> 011, PR2 封版补齐：trade 表（交易记录表）
+INFO  [alembic.runtime.migration] Running upgrade 011 -> 012, PR2/MVP 封版补齐：dedup_signal.processed 字段
+INFO  [alembic.runtime.migration] Running upgrade 012 -> 013, A1: strategy_runtime_state 互斥锁字段 + TTL 支撑
+INFO  [alembic.runtime.migration] Running upgrade 013 -> 014, A2: trade 表 EXTERNAL_SYNC 来源支持（幂等键 strategy_id + external_trade_id）
+INFO  [alembic.runtime.migration] Running upgrade 014 -> 015, A3: position_reconcile_log 表（external_trade_id + event_type 封闭枚举）
+INFO  [alembic.runtime.migration] Running upgrade 015 -> 016, C3: position_reconcile_log 增加 price_tier 列（定价档位落盘可追溯）
+INFO  [alembic.runtime.migration] Running upgrade 016 -> 017, C5: strategy_runtime_state.status, position_reconcile_log.diff_snapshot, signal_rejection 表
+INFO  [alembic.runtime.migration] Running upgrade 017 -> 018, Phase1.2 A1: decision_snapshot 表（决策输入快照，落实 0.4）
+INFO  [alembic.runtime.migration] Running upgrade 018 -> 019, Phase1.2 A2: log 表（审计/操作/错误日志）
+INFO  [alembic.runtime.migration] Running upgrade 019 -> 020, Phase1.2 A3: perf_log 表（性能日志，1.2b）
+INFO  [alembic.runtime.migration] Running upgrade 020 -> 021, Phase2.0 A1: metrics_snapshot 表（指标快照，Phase 2.0 自有）
+INFO  [alembic.runtime.migration] Running upgrade 021 -> 022, Phase2.0 A2: evaluation_report 表（评估报告，满足 0.2，Phase 2.0 自有）
+[cmd] create release_gate fixture (pre-A1)
+fixture_created
+[before] PRAGMA table_info(release_gate);
+(0, 'id', 'INTEGER', 0, None, 1)
+(1, 'status', 'VARCHAR(20)', 1, "'approved'", 0)
+[before] SELECT sql FROM sqlite_master WHERE name='release_gate';
+("CREATE TABLE release_gate (id INTEGER PRIMARY KEY AUTOINCREMENT, status VARCHAR(20) NOT NULL DEFAULT 'approved')",)
+[cmd] alembic upgrade 023
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade 022 -> 023, Phase2.1 A1: release_gate.status 五态扩展
+[after] PRAGMA table_info(release_gate);
+(0, 'id', 'INTEGER', 0, None, 1)
+(1, 'status', 'VARCHAR(20)', 1, "'candidate'", 0)
+[after] SELECT sql FROM sqlite_master WHERE name='release_gate';
+('CREATE TABLE "release_gate" (\n\tid INTEGER, \n\tstatus VARCHAR(20) DEFAULT \'candidate\' NOT NULL, \n\tPRIMARY KEY (id), \n\tCONSTRAINT ck_release_gate_status_phase21_a1 CHECK (status IN (\'candidate\',\'approved\',\'active\',\'disabled\',\'rollback\'))\n)',)

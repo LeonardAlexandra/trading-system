@@ -1,0 +1,458 @@
+{
+  "version": "2.0",
+  "started_at": "2026-02-22T21:56:09.864719",
+  "last_check": "2026-02-22T22:25:50.550788",
+  "evidence_packs": {
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_A1_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.875317",
+      "size_bytes": 18714,
+      "modified_at": "2026-02-14T14:56:36.329474",
+      "filename": "Phase2.0_A1_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_C2_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.875374",
+      "size_bytes": 7303,
+      "modified_at": "2026-02-14T21:05:13.988742",
+      "filename": "Phase2.0_C2_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_C1_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.875399",
+      "size_bytes": 29044,
+      "modified_at": "2026-02-14T19:49:25.359170",
+      "filename": "Phase2.0_C1_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_A2_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.875422",
+      "size_bytes": 16010,
+      "modified_at": "2026-02-14T15:23:45.763796",
+      "filename": "Phase2.0_A2_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/Demodocs/[\u6a21\u5757\u7f16\u53f7]_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.875446",
+      "size_bytes": 2111,
+      "modified_at": "2026-02-05T18:59:56.484329",
+      "filename": "[\u6a21\u5757\u7f16\u53f7]_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR17a_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.875469",
+      "size_bytes": 9150,
+      "modified_at": "2026-02-03T12:34:47.656572",
+      "filename": "PR17a_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/Phase1.0_Final_Evidence_Pack.md": {
+      "discovered_at": "2026-02-22T21:56:09.875493",
+      "size_bytes": 16605,
+      "modified_at": "2026-02-03T13:53:49.625478",
+      "filename": "Phase1.0_Final_Evidence_Pack.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR17b_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305\uff08\u8865\u5f3a\u7248\uff09.md": {
+      "discovered_at": "2026-02-22T21:56:09.875550",
+      "size_bytes": 8429,
+      "modified_at": "2026-02-03T13:24:57.766836",
+      "filename": "PR17b_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305\uff08\u8865\u5f3a\u7248\uff09.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR15b\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.875726",
+      "size_bytes": 9301,
+      "modified_at": "2026-02-02T21:06:31.076012",
+      "filename": "PR15b\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR12\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.875921",
+      "size_bytes": 7484,
+      "modified_at": "2026-02-02T16:20:16.044632",
+      "filename": "PR12\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR17b_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.875958",
+      "size_bytes": 7452,
+      "modified_at": "2026-02-03T13:02:51.741382",
+      "filename": "PR17b_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR14a\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.875984",
+      "size_bytes": 11716,
+      "modified_at": "2026-02-02T17:13:38.606919",
+      "filename": "PR14a\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/Phase1.0_\u5c01\u7248\u8865\u4ea4\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876007",
+      "size_bytes": 6147,
+      "modified_at": "2026-02-03T17:31:11.237978",
+      "filename": "Phase1.0_\u5c01\u7248\u8865\u4ea4\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR16_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305\uff08\u4fee\u8ba2\u7248\uff09.md": {
+      "discovered_at": "2026-02-22T21:56:09.876087",
+      "size_bytes": 14531,
+      "modified_at": "2026-02-02T23:18:51.589414",
+      "filename": "PR16_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305\uff08\u4fee\u8ba2\u7248\uff09.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR14b\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876402",
+      "size_bytes": 12294,
+      "modified_at": "2026-02-02T20:27:38.926726",
+      "filename": "PR14b\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/Phase1.0_Closure_Patch_Evidence.md": {
+      "discovered_at": "2026-02-22T21:56:09.876494",
+      "size_bytes": 11602,
+      "modified_at": "2026-02-03T14:12:16.810195",
+      "filename": "Phase1.0_Closure_Patch_Evidence.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR11\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876527",
+      "size_bytes": 10508,
+      "modified_at": "2026-02-02T15:42:18.081583",
+      "filename": "PR11\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR15c_\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876553",
+      "size_bytes": 5310,
+      "modified_at": "2026-02-02T22:02:41.268910",
+      "filename": "PR15c_\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR15a\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876577",
+      "size_bytes": 8708,
+      "modified_at": "2026-02-02T20:41:44.320667",
+      "filename": "PR15a\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR16c_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876601",
+      "size_bytes": 8492,
+      "modified_at": "2026-02-02T23:36:33.298626",
+      "filename": "PR16c_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR16_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876624",
+      "size_bytes": 7717,
+      "modified_at": "2026-02-02T22:37:29.394189",
+      "filename": "PR16_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR13\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876646",
+      "size_bytes": 9630,
+      "modified_at": "2026-02-02T16:44:26.252776",
+      "filename": "PR13\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR12\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305\uff08\u4fee\u8ba2\u7248\uff09.md": {
+      "discovered_at": "2026-02-22T21:56:09.876672",
+      "size_bytes": 8764,
+      "modified_at": "2026-02-02T16:19:48.717730",
+      "filename": "PR12\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305\uff08\u4fee\u8ba2\u7248\uff09.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C4_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876695",
+      "size_bytes": 9879,
+      "modified_at": "2026-02-05T23:41:15.615791",
+      "filename": "Phase1.1_C4_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D4_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876716",
+      "size_bytes": 6969,
+      "modified_at": "2026-02-06T19:19:57.519144",
+      "filename": "Phase1.1_D4_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_A3_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876737",
+      "size_bytes": 11875,
+      "modified_at": "2026-02-05T20:37:59.265892",
+      "filename": "Phase1.1_A3_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_B1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876758",
+      "size_bytes": 8560,
+      "modified_at": "2026-02-06T17:21:31.147652",
+      "filename": "Phase1.1_B1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876779",
+      "size_bytes": 7692,
+      "modified_at": "2026-02-06T18:12:48.383358",
+      "filename": "Phase1.1_D1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876801",
+      "size_bytes": 12449,
+      "modified_at": "2026-02-05T20:59:09.049531",
+      "filename": "Phase1.1_C1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876821",
+      "size_bytes": 8976,
+      "modified_at": "2026-02-06T18:27:30.241800",
+      "filename": "Phase1.1_D2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876842",
+      "size_bytes": 12230,
+      "modified_at": "2026-02-05T21:30:39.548109",
+      "filename": "Phase1.1_C2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_B2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876863",
+      "size_bytes": 6283,
+      "modified_at": "2026-02-06T20:30:17.366112",
+      "filename": "Phase1.1_B2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C7_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876885",
+      "size_bytes": 9079,
+      "modified_at": "2026-02-06T17:50:54.011158",
+      "filename": "Phase1.1_C7_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_A2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876906",
+      "size_bytes": 17100,
+      "modified_at": "2026-02-05T20:12:37.651437",
+      "filename": "Phase1.1_A2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D5_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876928",
+      "size_bytes": 9561,
+      "modified_at": "2026-02-06T19:58:47.963546",
+      "filename": "Phase1.1_D5_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C5_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876950",
+      "size_bytes": 8175,
+      "modified_at": "2026-02-06T14:34:48.167128",
+      "filename": "Phase1.1_C5_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D6_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.876979",
+      "size_bytes": 8871,
+      "modified_at": "2026-02-06T20:42:49.706446",
+      "filename": "Phase1.1_D6_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C6_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.877001",
+      "size_bytes": 8493,
+      "modified_at": "2026-02-06T16:49:23.107669",
+      "filename": "Phase1.1_C6_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_\u7cfb\u7edf\u7ea7\u603b\u6d4b\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.877058",
+      "size_bytes": 24605,
+      "modified_at": "2026-02-07T13:02:18.981124",
+      "filename": "Phase1.1_\u7cfb\u7edf\u7ea7\u603b\u6d4b\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_A1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.878306",
+      "size_bytes": 15362,
+      "modified_at": "2026-02-05T19:22:40.661572",
+      "filename": "Phase1.1_A1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C3_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.878689",
+      "size_bytes": 13133,
+      "modified_at": "2026-02-05T23:00:56.337886",
+      "filename": "Phase1.1_C3_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D3_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.878975",
+      "size_bytes": 9749,
+      "modified_at": "2026-02-06T18:39:22.587714",
+      "filename": "Phase1.1_D3_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_A3_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879082",
+      "size_bytes": 10777,
+      "modified_at": "2026-02-07T18:44:06.917422",
+      "filename": "Phase1.2_A3_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_A2_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879168",
+      "size_bytes": 11099,
+      "modified_at": "2026-02-07T18:37:46.580542",
+      "filename": "Phase1.2_A2_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C1_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879197",
+      "size_bytes": 14143,
+      "modified_at": "2026-02-07T19:27:24.124712",
+      "filename": "Phase1.2_C1_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D6_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879220",
+      "size_bytes": 5276,
+      "modified_at": "2026-02-10T17:56:10.286163",
+      "filename": "Phase1.2_D6_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C7_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879242",
+      "size_bytes": 9633,
+      "modified_at": "2026-02-08T13:39:02.517030",
+      "filename": "Phase1.2_C7_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C6_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879365",
+      "size_bytes": 9979,
+      "modified_at": "2026-02-07T21:13:59.086507",
+      "filename": "Phase1.2_C6_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D1_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879460",
+      "size_bytes": 5173,
+      "modified_at": "2026-02-10T17:11:07.077381",
+      "filename": "Phase1.2_D1_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_B1_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879495",
+      "size_bytes": 15117,
+      "modified_at": "2026-02-07T23:20:39.876519",
+      "filename": "Phase1.2_B1_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C3_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879520",
+      "size_bytes": 11852,
+      "modified_at": "2026-02-07T20:10:15.623506",
+      "filename": "Phase1.2_C3_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C2_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879543",
+      "size_bytes": 13887,
+      "modified_at": "2026-02-07T19:55:15.404818",
+      "filename": "Phase1.2_C2_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D4_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879568",
+      "size_bytes": 4216,
+      "modified_at": "2026-02-10T17:40:14.500241",
+      "filename": "Phase1.2_D4_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D5_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879589",
+      "size_bytes": 5894,
+      "modified_at": "2026-02-10T17:51:33.226510",
+      "filename": "Phase1.2_D5_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C9_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879610",
+      "size_bytes": 13530,
+      "modified_at": "2026-02-09T22:15:40.527568",
+      "filename": "Phase1.2_C9_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C8_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879632",
+      "size_bytes": 10978,
+      "modified_at": "2026-02-09T21:23:28.652417",
+      "filename": "Phase1.2_C8_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_A1_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879653",
+      "size_bytes": 9974,
+      "modified_at": "2026-02-07T18:22:49.621172",
+      "filename": "Phase1.2_A1_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_B2_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879683",
+      "size_bytes": 11244,
+      "modified_at": "2026-02-07T23:31:18.359386",
+      "filename": "Phase1.2_B2_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C4_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879705",
+      "size_bytes": 10153,
+      "modified_at": "2026-02-07T20:27:09.693444",
+      "filename": "Phase1.2_C4_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C5_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.879813",
+      "size_bytes": 6924,
+      "modified_at": "2026-02-07T20:50:49.747334",
+      "filename": "Phase1.2_C5_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D3_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.880062",
+      "size_bytes": 4913,
+      "modified_at": "2026-02-10T17:33:02.941090",
+      "filename": "Phase1.2_D3_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D2_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:09.880092",
+      "size_bytes": 4130,
+      "modified_at": "2026-02-10T17:20:35.951152",
+      "filename": "Phase1.2_D2_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_C3_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:56:40.040161",
+      "size_bytes": 8206,
+      "modified_at": "2026-02-22T21:56:28.984222",
+      "filename": "Phase2.0_C3_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/Phase2.0_C3_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:57:40.272289",
+      "size_bytes": 752,
+      "modified_at": "2026-02-22T21:57:16.759396",
+      "filename": "Phase2.0_C3_\u6a21\u5757\u8bc1\u636e\u5305.md"
+    }
+  },
+  "last_modified": {
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_A1_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-14T14:56:36.329474",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_C2_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-14T21:05:13.988742",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_C1_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-14T19:49:25.359170",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_A2_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-14T15:23:45.763796",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/Demodocs/[\u6a21\u5757\u7f16\u53f7]_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-05T18:59:56.484329",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR17a_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-03T12:34:47.656572",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/Phase1.0_Final_Evidence_Pack.md": "2026-02-03T13:53:49.625478",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR17b_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305\uff08\u8865\u5f3a\u7248\uff09.md": "2026-02-03T13:24:57.766836",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR15b\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T21:06:31.076012",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR12\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T16:20:16.044632",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR17b_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-03T13:02:51.741382",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR14a\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T17:13:38.606919",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/Phase1.0_\u5c01\u7248\u8865\u4ea4\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-03T17:31:11.237978",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR16_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305\uff08\u4fee\u8ba2\u7248\uff09.md": "2026-02-02T23:18:51.589414",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR14b\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T20:27:38.926726",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/Phase1.0_Closure_Patch_Evidence.md": "2026-02-03T14:12:16.810195",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR11\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T15:42:18.081583",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR15c_\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T22:02:41.268910",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR15a\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T20:41:44.320667",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR16c_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T23:36:33.298626",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR16_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T22:37:29.394189",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR13\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T16:44:26.252776",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR12\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305\uff08\u4fee\u8ba2\u7248\uff09.md": "2026-02-02T16:19:48.717730",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C4_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-05T23:41:15.615791",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D4_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T19:19:57.519144",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_A3_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-05T20:37:59.265892",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_B1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T17:21:31.147652",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T18:12:48.383358",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-05T20:59:09.049531",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T18:27:30.241800",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-05T21:30:39.548109",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_B2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T20:30:17.366112",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C7_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T17:50:54.011158",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_A2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-05T20:12:37.651437",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D5_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T19:58:47.963546",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C5_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T14:34:48.167128",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D6_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T20:42:49.706446",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C6_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T16:49:23.107669",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_\u7cfb\u7edf\u7ea7\u603b\u6d4b\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-07T13:02:18.981124",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_A1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-05T19:22:40.661572",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C3_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-05T23:00:56.337886",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D3_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T18:39:22.587714",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_A3_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T18:44:06.917422",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_A2_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T18:37:46.580542",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C1_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T19:27:24.124712",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D6_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-10T17:56:10.286163",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C7_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-08T13:39:02.517030",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C6_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T21:13:59.086507",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D1_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-10T17:11:07.077381",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_B1_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T23:20:39.876519",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C3_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T20:10:15.623506",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C2_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T19:55:15.404818",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D4_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-10T17:40:14.500241",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D5_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-10T17:51:33.226510",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C9_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-09T22:15:40.527568",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C8_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-09T21:23:28.652417",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_A1_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T18:22:49.621172",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_B2_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T23:31:18.359386",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C4_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T20:27:09.693444",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C5_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T20:50:49.747334",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D3_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-10T17:33:02.941090",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D2_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-10T17:20:35.951152",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_C3_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-22T21:56:28.984222"
+  },
+  "new_files_count": 64,
+  "modified_files_count": 63
+}

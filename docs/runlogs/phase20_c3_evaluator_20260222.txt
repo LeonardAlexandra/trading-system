@@ -1,0 +1,18 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.7, pytest-9.0.2, pluggy-1.6.0 -- /Library/Frameworks/Python.framework/Versions/3.11/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/zhangkuo/TradingView Indicator/trading_system
+configfile: pyproject.toml
+plugins: anyio-4.12.1, asyncio-1.3.0, cov-7.0.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=function, asyncio_default_test_loop_scope=function
+collecting ... collected 7 items
+
+tests/unit/phase2/test_evaluator.py::test_evaluate_produces_report_with_02_five_and_persisted PASSED [ 14%]
+tests/unit/phase2/test_evaluator.py::test_evaluate_b1_structure PASSED   [ 28%]
+tests/unit/phase2/test_evaluator.py::test_evaluate_baseline_version_id_is_strategy_version_only PASSED [ 42%]
+tests/unit/phase2/test_evaluator.py::test_evaluate_read_only_phase12_unchanged PASSED [ 57%]
+tests/unit/phase2/test_evaluator.py::test_conclusion_and_comparison_no_suggest_wording PASSED [ 71%]
+tests/unit/phase2/test_evaluator.py::test_constraint_min_trade_count_fail PASSED [ 85%]
+tests/unit/phase2/test_evaluator.py::test_constraint_min_trade_count_pass PASSED [100%]
+
+============================== 7 passed in 0.35s ===============================

@@ -1,0 +1,367 @@
+{
+  "last_check": "2026-02-22T21:55:50.525512",
+  "evidence_packs": {
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_A1_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.136892",
+      "size": 18714,
+      "modified_at": "2026-02-14T14:56:36.329474"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_C2_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.136918",
+      "size": 7303,
+      "modified_at": "2026-02-14T21:05:13.988742"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_C1_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.136927",
+      "size": 29044,
+      "modified_at": "2026-02-14T19:49:25.359170"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_A2_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.136935",
+      "size": 16010,
+      "modified_at": "2026-02-14T15:23:45.763796"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/Demodocs/[\u6a21\u5757\u7f16\u53f7]_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.136944",
+      "size": 2111,
+      "modified_at": "2026-02-05T18:59:56.484329"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR17a_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.136953",
+      "size": 9150,
+      "modified_at": "2026-02-03T12:34:47.656572"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR17b_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305\uff08\u8865\u5f3a\u7248\uff09.md": {
+      "discovered_at": "2026-02-22T21:47:16.136961",
+      "size": 8429,
+      "modified_at": "2026-02-03T13:24:57.766836"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR15b\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.136972",
+      "size": 9301,
+      "modified_at": "2026-02-02T21:06:31.076012"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR12\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.136980",
+      "size": 7484,
+      "modified_at": "2026-02-02T16:20:16.044632"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR17b_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.136988",
+      "size": 7452,
+      "modified_at": "2026-02-03T13:02:51.741382"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR14a\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.136995",
+      "size": 11716,
+      "modified_at": "2026-02-02T17:13:38.606919"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/Phase1.0_\u5c01\u7248\u8865\u4ea4\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137003",
+      "size": 6147,
+      "modified_at": "2026-02-03T17:31:11.237978"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR16_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305\uff08\u4fee\u8ba2\u7248\uff09.md": {
+      "discovered_at": "2026-02-22T21:47:16.137010",
+      "size": 14531,
+      "modified_at": "2026-02-02T23:18:51.589414"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR14b\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137017",
+      "size": 12294,
+      "modified_at": "2026-02-02T20:27:38.926726"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR11\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137069",
+      "size": 10508,
+      "modified_at": "2026-02-02T15:42:18.081583"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR15c_\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137086",
+      "size": 5310,
+      "modified_at": "2026-02-02T22:02:41.268910"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR15a\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137095",
+      "size": 8708,
+      "modified_at": "2026-02-02T20:41:44.320667"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR16c_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137103",
+      "size": 8492,
+      "modified_at": "2026-02-02T23:36:33.298626"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR16_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137110",
+      "size": 7717,
+      "modified_at": "2026-02-02T22:37:29.394189"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR13\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137118",
+      "size": 9630,
+      "modified_at": "2026-02-02T16:44:26.252776"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR12\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305\uff08\u4fee\u8ba2\u7248\uff09.md": {
+      "discovered_at": "2026-02-22T21:47:16.137124",
+      "size": 8764,
+      "modified_at": "2026-02-02T16:19:48.717730"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C4_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137160",
+      "size": 9879,
+      "modified_at": "2026-02-05T23:41:15.615791"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D4_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137183",
+      "size": 6969,
+      "modified_at": "2026-02-06T19:19:57.519144"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_A3_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137192",
+      "size": 11875,
+      "modified_at": "2026-02-05T20:37:59.265892"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_B1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137199",
+      "size": 8560,
+      "modified_at": "2026-02-06T17:21:31.147652"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137206",
+      "size": 7692,
+      "modified_at": "2026-02-06T18:12:48.383358"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137213",
+      "size": 12449,
+      "modified_at": "2026-02-05T20:59:09.049531"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137221",
+      "size": 8976,
+      "modified_at": "2026-02-06T18:27:30.241800"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137227",
+      "size": 12230,
+      "modified_at": "2026-02-05T21:30:39.548109"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_B2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137235",
+      "size": 6283,
+      "modified_at": "2026-02-06T20:30:17.366112"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C7_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137242",
+      "size": 9079,
+      "modified_at": "2026-02-06T17:50:54.011158"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_A2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137248",
+      "size": 17100,
+      "modified_at": "2026-02-05T20:12:37.651437"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D5_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137255",
+      "size": 9561,
+      "modified_at": "2026-02-06T19:58:47.963546"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C5_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137262",
+      "size": 8175,
+      "modified_at": "2026-02-06T14:34:48.167128"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D6_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137270",
+      "size": 8871,
+      "modified_at": "2026-02-06T20:42:49.706446"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C6_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137277",
+      "size": 8493,
+      "modified_at": "2026-02-06T16:49:23.107669"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_\u7cfb\u7edf\u7ea7\u603b\u6d4b\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137283",
+      "size": 24605,
+      "modified_at": "2026-02-07T13:02:18.981124"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_A1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137290",
+      "size": 15362,
+      "modified_at": "2026-02-05T19:22:40.661572"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C3_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137296",
+      "size": 13133,
+      "modified_at": "2026-02-05T23:00:56.337886"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D3_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137303",
+      "size": 9749,
+      "modified_at": "2026-02-06T18:39:22.587714"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_A3_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137316",
+      "size": 10777,
+      "modified_at": "2026-02-07T18:44:06.917422"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_A2_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137323",
+      "size": 11099,
+      "modified_at": "2026-02-07T18:37:46.580542"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C1_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137330",
+      "size": 14143,
+      "modified_at": "2026-02-07T19:27:24.124712"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D6_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137339",
+      "size": 5276,
+      "modified_at": "2026-02-10T17:56:10.286163"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C7_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137346",
+      "size": 9633,
+      "modified_at": "2026-02-08T13:39:02.517030"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C6_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137352",
+      "size": 9979,
+      "modified_at": "2026-02-07T21:13:59.086507"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D1_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137359",
+      "size": 5173,
+      "modified_at": "2026-02-10T17:11:07.077381"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_B1_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137365",
+      "size": 15117,
+      "modified_at": "2026-02-07T23:20:39.876519"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C3_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137372",
+      "size": 11852,
+      "modified_at": "2026-02-07T20:10:15.623506"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C2_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137378",
+      "size": 13887,
+      "modified_at": "2026-02-07T19:55:15.404818"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D4_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137385",
+      "size": 4216,
+      "modified_at": "2026-02-10T17:40:14.500241"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D5_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137391",
+      "size": 5894,
+      "modified_at": "2026-02-10T17:51:33.226510"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C9_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137398",
+      "size": 13530,
+      "modified_at": "2026-02-09T22:15:40.527568"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C8_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137405",
+      "size": 10978,
+      "modified_at": "2026-02-09T21:23:28.652417"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_A1_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137411",
+      "size": 9974,
+      "modified_at": "2026-02-07T18:22:49.621172"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_B2_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137418",
+      "size": 11244,
+      "modified_at": "2026-02-07T23:31:18.359386"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C4_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137425",
+      "size": 10153,
+      "modified_at": "2026-02-07T20:27:09.693444"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C5_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137431",
+      "size": 6924,
+      "modified_at": "2026-02-07T20:50:49.747334"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D3_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137438",
+      "size": 4913,
+      "modified_at": "2026-02-10T17:33:02.941090"
+    },
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D2_\u6a21\u5757\u8bc1\u636e\u5305.md": {
+      "discovered_at": "2026-02-22T21:47:16.137445",
+      "size": 4130,
+      "modified_at": "2026-02-10T17:20:35.951152"
+    }
+  },
+  "last_modified": {
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_A1_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-14T14:56:36.329474",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_C2_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-14T21:05:13.988742",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_C1_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-14T19:49:25.359170",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase2.0/Phase2.0_A2_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-14T15:23:45.763796",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/Demodocs/[\u6a21\u5757\u7f16\u53f7]_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-05T18:59:56.484329",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR17a_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-03T12:34:47.656572",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR17b_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305\uff08\u8865\u5f3a\u7248\uff09.md": "2026-02-03T13:24:57.766836",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR15b\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T21:06:31.076012",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR12\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T16:20:16.044632",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR17b_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-03T13:02:51.741382",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR14a\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T17:13:38.606919",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/Phase1.0_\u5c01\u7248\u8865\u4ea4\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-03T17:31:11.237978",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR16_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305\uff08\u4fee\u8ba2\u7248\uff09.md": "2026-02-02T23:18:51.589414",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR14b\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T20:27:38.926726",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR11\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T15:42:18.081583",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR15c_\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T22:02:41.268910",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR15a\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T20:41:44.320667",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR16c_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T23:36:33.298626",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR16_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T22:37:29.394189",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR13\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-02T16:44:26.252776",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.0/PR12\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305\uff08\u4fee\u8ba2\u7248\uff09.md": "2026-02-02T16:19:48.717730",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C4_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-05T23:41:15.615791",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D4_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T19:19:57.519144",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_A3_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-05T20:37:59.265892",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_B1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T17:21:31.147652",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T18:12:48.383358",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-05T20:59:09.049531",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T18:27:30.241800",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-05T21:30:39.548109",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_B2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T20:30:17.366112",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C7_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T17:50:54.011158",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_A2_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-05T20:12:37.651437",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D5_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T19:58:47.963546",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C5_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T14:34:48.167128",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D6_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T20:42:49.706446",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C6_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T16:49:23.107669",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_\u7cfb\u7edf\u7ea7\u603b\u6d4b\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-07T13:02:18.981124",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_A1_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-05T19:22:40.661572",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_C3_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-05T23:00:56.337886",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.1/Phase1.1_D3_\u5de5\u7a0b\u7ea7\u6821\u9a8c\u8bc1\u636e\u5305.md": "2026-02-06T18:39:22.587714",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_A3_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T18:44:06.917422",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_A2_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T18:37:46.580542",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C1_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T19:27:24.124712",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D6_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-10T17:56:10.286163",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C7_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-08T13:39:02.517030",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C6_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T21:13:59.086507",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D1_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-10T17:11:07.077381",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_B1_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T23:20:39.876519",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C3_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T20:10:15.623506",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C2_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T19:55:15.404818",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D4_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-10T17:40:14.500241",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D5_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-10T17:51:33.226510",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C9_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-09T22:15:40.527568",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C8_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-09T21:23:28.652417",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_A1_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T18:22:49.621172",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_B2_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T23:31:18.359386",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C4_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T20:27:09.693444",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_C5_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-07T20:50:49.747334",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D3_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-10T17:33:02.941090",
+    "/Users/zhangkuo/TradingView Indicator/trading_system/docs/phase1.2/Phase1.2_D2_\u6a21\u5757\u8bc1\u636e\u5305.md": "2026-02-10T17:20:35.951152"
+  }
+}

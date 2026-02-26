@@ -1,0 +1,21 @@
+=== C9 故障恢复演练 ===
+输出目录: docs/runlogs
+
+--- 场景1：数据库短暂不可用 ---
+1. 备份 DB: cp ./trading_system.db ./trading_system.db.c9_drill_backup
+2. 模拟不可用: mv ./trading_system.db ./trading_system.db.moved
+3. 此时若请求服务（需服务已启动），应得到连接/执行错误；健康接口可 503 或 500。
+4. 恢复: mv ./trading_system.db.moved ./trading_system.db
+5. 验证: 再次请求 /healthz 或 /api/health/summary 应恢复 200。
+场景1 完成（DB 已恢复）
+
+--- 场景2：执行端不可用（以停止 worker 模拟）---
+步骤：
+1. 若 execution worker 作为独立进程运行：kill worker 进程。
+2. 观测：新 webhook 仍可接受（200），决策落库；执行层不处理 RESERVED。
+3. 恢复：重新启动 execution worker。
+4. 验证：/api/health/summary 或 log 中可追溯；新信号可继续走通。
+（本脚本不自动 kill 进程；请手工执行或使用 pytest 注入失败）
+场景2 说明已写入 docs/runlogs/c9_failure_drill_scenario2_20260208_152450.log
+
+演练记录已写入 docs/runlogs/c9_failure_drill_scenario1_20260208_152450.log, docs/runlogs/c9_failure_drill_scenario2_20260208_152450.log

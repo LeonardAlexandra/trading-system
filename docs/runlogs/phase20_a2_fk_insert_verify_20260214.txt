@@ -1,0 +1,49 @@
+=== Phase2.0 A2 FK 与自增主键实跑验证（PRAGMA foreign_keys=ON）===
+DB: phase20_a2_test.db（与 migration runlog 同库）
+日期：2026-02-14
+
+---------- 【H】PRAGMA foreign_keys=ON + 正反两条反证 ----------
+
+1) 开启外键并插入 metrics_snapshot，再插入 evaluation_report 引用其 id（应成功）
+
+命令：
+  sqlite3 phase20_a2_test.db "
+  PRAGMA foreign_keys = ON;
+  INSERT INTO metrics_snapshot (strategy_id, strategy_version_id, period_start, period_end, trade_count, realized_pnl) VALUES ('fk_s', 'fk_v', '2026-01-01 00:00:00', '2026-01-02 00:00:00', 0, 0);
+  INSERT INTO evaluation_report (strategy_id, strategy_version_id, evaluated_at, period_start, period_end, objective_definition, constraint_definition, conclusion, metrics_snapshot_id) VALUES ('s1','v1','2026-01-01 12:00:00','2026-01-01 00:00:00','2026-01-02 00:00:00','{}','{}','ok', last_insert_rowid());
+  SELECT id, strategy_id, metrics_snapshot_id FROM evaluation_report WHERE conclusion='ok';
+  "
+
+输出：
+3|s1|2
+
+Exit code: 0
+结论：引用有效 metrics_snapshot_id 的插入成功。
+
+2) PRAGMA foreign_keys=ON 下插入 evaluation_report 引用不存在的 metrics_snapshot_id（应失败）
+
+命令：
+  sqlite3 phase20_a2_test.db "
+  PRAGMA foreign_keys = ON;
+  INSERT INTO evaluation_report (strategy_id, strategy_version_id, evaluated_at, period_start, period_end, objective_definition, constraint_definition, conclusion, metrics_snapshot_id) VALUES ('s1','v1','2026-01-03 12:00:00','2026-01-03 00:00:00','2026-01-04 00:00:00','{}','{}','should_fail', 99999);
+  "
+
+输出：
+Error: stepping, FOREIGN KEY constraint failed (19)
+
+Exit code: 19
+结论：引用不存在的 metrics_snapshot_id 时，SQLite 在 foreign_keys=ON 下拒绝插入，FOREIGN KEY constraint failed。
+
+---------- 【G】自增主键验证（不传 id 插入 2 行）----------
+
+第一次（upgrade head 后）：
+  INSERT 2 行不传 id，SELECT 输出：
+  1|s1|2026-01-01 12:00:00|ok
+  2|s1|2026-01-02 12:00:00|ok2
+
+第二次（downgrade 021 -> upgrade head 后）：
+  INSERT 2 行不传 id，SELECT 输出：
+  1|s2|2026-02-01 12:00:00|a
+  2|s2|2026-02-02 12:00:00|b
+
+结论：id 自动生成且递增；幂等后行为一致。

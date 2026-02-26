@@ -1,0 +1,6 @@
+--- Registry Source Verification ---
+RealPath: /Users/zhangkuo/TradingView Indicator/trading_system/docs/tech_debt_registry.yaml
+SHA256:   9ae6d8a80a6a2bbe38ecb7ecb76addf8676f509a462fa486532e9d1ddebb8a39
+------------------------------------
+
+PASS: All blocking gates and Phase 2.0 tech debts are DONE with evidence.

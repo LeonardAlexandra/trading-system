@@ -1,0 +1,31 @@
+[C9] Baseline (steady-state) run: concurrency=1, requests=4
+{
+  "name": "baseline",
+  "total_requests": 4,
+  "success_count": 4,
+  "error_count": 0,
+  "success_rate_pct": 100.0,
+  "error_rate_pct": 0.0,
+  "duration_sec": 0.25,
+  "rps": 16.0,
+  "latency_p50_ms": 14.2,
+  "latency_p95_ms": 28.5,
+  "latency_p99_ms": 31.0
+}
+[C9] BASELINE PASS: 100% success, proceeding to stress run.
+
+[C9] Read-only: concurrency=2, duration_sec=4.0, total_requests≈20
+{
+  "name": "read_only",
+  "total_requests": 20,
+  "success_count": 20,
+  "error_count": 0,
+  "success_rate_pct": 100.0,
+  "error_rate_pct": 0.0,
+  "duration_sec": 1.02,
+  "rps": 19.61,
+  "latency_p50_ms": 48.2,
+  "latency_p95_ms": 82.1,
+  "latency_p99_ms": 95.0
+}
+Report written to docs/runlogs/c9_stress_report.json

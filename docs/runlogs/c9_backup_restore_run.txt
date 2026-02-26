@@ -1,0 +1,25 @@
+=== C9 备份与恢复演练 ===
+DATABASE_URL=sqlite+aiosqlite:///./trading_system.db
+DB_PATH=./trading_system.db
+BACKUP_FILE=docs/runlogs/c9_backup_20260209_221359.db
+
+--- 备份 ---
+执行: cp ./trading_system.db docs/runlogs/c9_backup_20260209_221359.db
+备份完成: docs/runlogs/c9_backup_20260209_221359.db
+
+--- 恢复演练 ---
+1. 将备份复制到临时路径: cp docs/runlogs/c9_backup_20260209_221359.db /tmp/c9_restore_verify_20260209_221359.db
+2. 使用恢复后的 DB 做校验查询（sqlite3）
+  decision_snapshot 条数:
+Error: in prepare, no such table: decision_snapshot
+  log 条数:
+Error: in prepare, no such table: log
+  trade 条数:
+0
+  (若表不存在会报错，属未迁移或空库)
+
+--- 恢复命令（实际恢复时执行）---
+  cp docs/runlogs/c9_backup_20260209_221359.db ./trading_system.db
+  然后重启应用。
+
+演练记录已写入 docs/runlogs/c9_backup_restore_20260209_221359.log

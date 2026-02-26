@@ -1,0 +1,23 @@
+# Phase1.0 PR16：构建上下文忽略项
+.git
+.venv
+venv
+__pycache__
+*.pyc
+.pytest_cache
+.mypy_cache
+.ruff_cache
+logs
+dist
+build
+*.egg-info
+.env
+.env.local
+*.db
+*.sqlite
+.cursor
+*.md
+!config/README.md
+tests
+docs
+*.log
