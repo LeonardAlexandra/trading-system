@@ -1,6 +1,6 @@
-[cmd] export DATABASE_URL=sqlite+aiosqlite:////Users/zhangkuo/TradingView Indicator/trading_system/tmp_phase21_a1.db
+[env] DATABASE_URL=sqlite+aiosqlite:////tmp/phase21_a1_migration_verify.db
 [cmd] reset db
-removed_old_db /Users/zhangkuo/TradingView Indicator/trading_system/tmp_phase21_a1.db
+removed_old_db /tmp/phase21_a1_migration_verify.db
 [cmd] alembic upgrade 022
 INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
 INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
@@ -26,31 +26,27 @@ INFO  [alembic.runtime.migration] Running upgrade 018 -> 019, Phase1.2 A2: log �
 INFO  [alembic.runtime.migration] Running upgrade 019 -> 020, Phase1.2 A3: perf_log 表（性能日志，1.2b）
 INFO  [alembic.runtime.migration] Running upgrade 020 -> 021, Phase2.0 A1: metrics_snapshot 表（指标快照，Phase 2.0 自有）
 INFO  [alembic.runtime.migration] Running upgrade 021 -> 022, Phase2.0 A2: evaluation_report 表（评估报告，满足 0.2，Phase 2.0 自有）
-[cmd] create release_gate fixture
-before_upgrade_release_gate_sql= CREATE TABLE release_gate (id INTEGER PRIMARY KEY AUTOINCREMENT, status VARCHAR(20) NOT NULL DEFAULT 'approved')
+[cmd] create release_gate fixture (pre-A1)
+fixture_created
 [cmd] alembic upgrade 023
 INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
 INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
 INFO  [alembic.runtime.migration] Running upgrade 022 -> 023, Phase2.1 A1: release_gate.status 五态扩展
-[cmd] inspect after upgrade
+[check] inspect upgraded ddl
 after_upgrade_release_gate_sql= CREATE TABLE "release_gate" (
 	id INTEGER, 
 	status VARCHAR(20) DEFAULT 'candidate' NOT NULL, 
 	PRIMARY KEY (id), 
-	CONSTRAINT ck_release_gate_status_phase21_a1 CHECK (status IN ('candidate','approved','active','disabled','rollback'))
+	CONSTRAINT ck_release_gate_status_phase21_a1 CHECK (status IN ('candidate','approved','active','stable','disabled'))
 )
-columns= [(0, 'id', 'INTEGER', 0, None, 1), (1, 'status', 'VARCHAR(20)', 1, "'candidate'", 0)]
+after_upgrade_table_info=
+(0, 'id', 'INTEGER', 0, None, 1)
+(1, 'status', 'VARCHAR(20)', 1, "'candidate'", 0)
+[check] write allowed five states
 allowed_states_insert=ok
-invalid_insert=blocked CHECK constraint failed: ck_release_gate_status_phase21_a1
+invalid_insert_rollback=blocked CHECK constraint failed: ck_release_gate_status_phase21_a1
+invalid_insert_unknown=blocked CHECK constraint failed: ck_release_gate_status_phase21_a1
 [cmd] alembic downgrade 022
 INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
 INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
 INFO  [alembic.runtime.migration] Running downgrade 023 -> 022, Phase2.1 A1: release_gate.status 五态扩展
-[cmd] inspect after downgrade
-after_downgrade_release_gate_sql= CREATE TABLE "release_gate" (
-	id INTEGER, 
-	status VARCHAR(20) NOT NULL, 
-	PRIMARY KEY (id)
-)
-columns= [(0, 'id', 'INTEGER', 0, None, 1), (1, 'status', 'VARCHAR(20)', 1, None, 0)]
-invalid_after_downgrade=allowed

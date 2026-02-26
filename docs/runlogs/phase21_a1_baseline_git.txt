@@ -1,0 +1,18 @@
+[cmd] git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   alembic/versions/023_phase21_a1_release_gate_status_expand.py
+	modified:   "docs/Phase2.1_A1_\350\257\201\346\215\256\345\214\205.md"
+	modified:   docs/runlogs/phase21_a1_change_scope_git.txt
+	modified:   docs/runlogs/phase21_a1_db_before_after.txt
+	modified:   docs/runlogs/phase21_a1_migration_verify.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	docs/runlogs/phase21_a1_baseline_git.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+[cmd] git add -A

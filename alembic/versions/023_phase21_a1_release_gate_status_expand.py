@@ -6,7 +6,7 @@ Create Date: 2026-02-26
 
 目标：
 - 扩展 release_gate.status 可存储五态：
-  candidate | approved | active | disabled | rollback
+  candidate | approved | active | stable | disabled
 - 默认值为 candidate
 - 仅做 A1 状态字段迁移，不改其他模块语义
 """
@@ -24,7 +24,7 @@ depends_on = None
 TARGET_TABLE = "release_gate"
 STATUS_COLUMN = "status"
 CHECK_NAME = "ck_release_gate_status_phase21_a1"
-ALLOWED_STATES = ("candidate", "approved", "active", "disabled", "rollback")
+ALLOWED_STATES = ("candidate", "approved", "active", "stable", "disabled")
 
 
 def _table_exists(bind: sa.engine.Connection, table_name: str) -> bool:
@@ -100,7 +100,7 @@ def upgrade() -> None:
             if not _check_exists(bind, TARGET_TABLE, CHECK_NAME):
                 batch_op.create_check_constraint(
                     CHECK_NAME,
-                    "status IN ('candidate','approved','active','disabled','rollback')",
+                    "status IN ('candidate','approved','active','stable','disabled')",
                 )
 
 

@@ -1,6 +1,6 @@
-[env] DATABASE_URL=sqlite+aiosqlite:////Users/zhangkuo/TradingView Indicator/trading_system/tmp_phase21_a1_db_compare.db
+[env] DATABASE_URL=sqlite+aiosqlite:////tmp/phase21_a1_db_before_after.db
 [cmd] reset db
-removed_old_db /Users/zhangkuo/TradingView Indicator/trading_system/tmp_phase21_a1_db_compare.db
+removed_old_db /tmp/phase21_a1_db_before_after.db
 [cmd] alembic upgrade 022
 INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
 INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
@@ -41,4 +41,4 @@ INFO  [alembic.runtime.migration] Running upgrade 022 -> 023, Phase2.1 A1: relea
 (0, 'id', 'INTEGER', 0, None, 1)
 (1, 'status', 'VARCHAR(20)', 1, "'candidate'", 0)
 [after] SELECT sql FROM sqlite_master WHERE name='release_gate';
-('CREATE TABLE "release_gate" (\n\tid INTEGER, \n\tstatus VARCHAR(20) DEFAULT \'candidate\' NOT NULL, \n\tPRIMARY KEY (id), \n\tCONSTRAINT ck_release_gate_status_phase21_a1 CHECK (status IN (\'candidate\',\'approved\',\'active\',\'disabled\',\'rollback\'))\n)',)
+('CREATE TABLE "release_gate" (\n\tid INTEGER, \n\tstatus VARCHAR(20) DEFAULT \'candidate\' NOT NULL, \n\tPRIMARY KEY (id), \n\tCONSTRAINT ck_release_gate_status_phase21_a1 CHECK (status IN (\'candidate\',\'approved\',\'active\',\'stable\',\'disabled\'))\n)',)
