@@ -335,7 +335,7 @@ pytest --cov=src --cov-report=html
 ## 📞 联系方式
 
 - GitHub Issues: [提交问题](https://github.com/LeonardAlexandra/trading-system/issues)
-- Email: your.email@example.com
+- Email: johnemerson928760923@gmail.com
 
 ---
 
