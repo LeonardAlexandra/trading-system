@@ -19,6 +19,9 @@ from src.models.log_entry import LogEntry
 from src.models.perf_log_entry import PerfLogEntry
 from src.models.evaluation_report import EvaluationReport
 from src.models.metrics_snapshot import MetricsSnapshot
+from src.models.param_version import ParamVersion
+from src.models.release_audit import ReleaseAudit
+from src.models.learning_audit import LearningAudit
 
 __all__ = [
     "Balance",
@@ -39,4 +42,7 @@ __all__ = [
     "PerfLogEntry",
     "EvaluationReport",
     "MetricsSnapshot",
+    "ParamVersion",
+    "ReleaseAudit",
+    "LearningAudit",
 ]
