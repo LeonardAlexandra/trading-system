@@ -7,7 +7,7 @@ from contextlib import asynccontextmanager
 import logging
 
 from src.app.dependencies import set_session_factory
-from src.app.routers import signal_receiver, resume, trace, health, dashboard, dashboard_page, audit, audit_page
+from src.app.routers import signal_receiver, resume, trace, health, dashboard, dashboard_page, audit, audit_page, bi, bi_page
 from src.database.connection import init_session_factory, dispose_engine
 from src.utils.logging import setup_logging
 from src.config.app_config import load_app_config, app_config_to_legacy_dict
@@ -103,6 +103,9 @@ def create_app() -> FastAPI:
     # C8：审计查询（list_traces + 日志）
     app.include_router(audit.router)
     app.include_router(audit_page.router)
+    # Phase 2.2：BI 只读 API 与展示页面
+    app.include_router(bi.router)
+    app.include_router(bi_page.router)
 
     return app
 
