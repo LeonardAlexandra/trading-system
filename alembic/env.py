@@ -38,9 +38,9 @@ if config.config_file_name is not None:
 # 从环境变量或配置文件中获取数据库 URL
 database_url = os.getenv("DATABASE_URL")
 if database_url:
-    # sqlite+aiosqlite 需转为 sqlite:// 以兼容部分 Alembic 操作；postgresql+asyncpg 保留以使用 async 迁移
-    if database_url.startswith("sqlite+aiosqlite"):
-        database_url = database_url.replace("sqlite+aiosqlite://", "sqlite:///")
+    # 直接使用原始 URL（async_engine_from_config 支持 sqlite+aiosqlite 和 postgresql+asyncpg）
+    # 注意：不转换 sqlite+aiosqlite → sqlite:///，否则会导致路径错误（多出一个 /）
+    # 且 run_migrations_online 中的 startswith 检查将失效
     config.set_main_option("sqlalchemy.url", database_url)
 else:
     # 如果环境变量不存在，检查 alembic.ini 中的 URL 是否为占位符

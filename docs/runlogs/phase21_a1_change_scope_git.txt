@@ -1,6 +1,3 @@
-[baseline] git add -A
-[baseline] git commit -m "baseline before Phase2.1 A1" || true
-
 [cmd] git status
 On branch main
 Changes not staged for commit:
@@ -8,389 +5,195 @@ Changes not staged for commit:
   (use "git restore <file>..." to discard changes in working directory)
 	modified:   alembic/versions/023_phase21_a1_release_gate_status_expand.py
 	modified:   "docs/Phase2.1_A1_\350\257\201\346\215\256\345\214\205.md"
+	modified:   docs/runlogs/phase21_a1_baseline_git.txt
 	modified:   docs/runlogs/phase21_a1_change_scope_git.txt
-	modified:   docs/runlogs/phase21_a1_db_before_after.txt
-	modified:   docs/runlogs/phase21_a1_migration_verify.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
 
 [cmd] git diff --name-only HEAD
 alembic/versions/023_phase21_a1_release_gate_status_expand.py
 "docs/Phase2.1_A1_\350\257\201\346\215\256\345\214\205.md"
+docs/runlogs/phase21_a1_baseline_git.txt
 docs/runlogs/phase21_a1_change_scope_git.txt
-docs/runlogs/phase21_a1_db_before_after.txt
-docs/runlogs/phase21_a1_migration_verify.txt
 
 [cmd] git diff HEAD -- alembic/versions/023_phase21_a1_release_gate_status_expand.py
 diff --git a/alembic/versions/023_phase21_a1_release_gate_status_expand.py b/alembic/versions/023_phase21_a1_release_gate_status_expand.py
-index 7a5acb0..aed4829 100644
+index aed4829..405b261 100644
 --- a/alembic/versions/023_phase21_a1_release_gate_status_expand.py
 +++ b/alembic/versions/023_phase21_a1_release_gate_status_expand.py
-@@ -6,7 +6,7 @@ Create Date: 2026-02-26
+@@ -81,6 +81,7 @@ def upgrade() -> None:
+     if not _column_exists(bind, TARGET_TABLE, STATUS_COLUMN):
+         return
  
- 目标：
- - 扩展 release_gate.status 可存储五态：
--  candidate | approved | active | disabled | rollback
-+  candidate | approved | active | stable | disabled
- - 默认值为 candidate
- - 仅做 A1 状态字段迁移，不改其他模块语义
- """
-@@ -24,7 +24,7 @@ depends_on = None
- TARGET_TABLE = "release_gate"
- STATUS_COLUMN = "status"
- CHECK_NAME = "ck_release_gate_status_phase21_a1"
--ALLOWED_STATES = ("candidate", "approved", "active", "disabled", "rollback")
-+ALLOWED_STATES = ("candidate", "approved", "active", "stable", "disabled")
- 
- 
- def _table_exists(bind: sa.engine.Connection, table_name: str) -> bool:
-@@ -100,7 +100,7 @@ def upgrade() -> None:
-             if not _check_exists(bind, TARGET_TABLE, CHECK_NAME):
-                 batch_op.create_check_constraint(
-                     CHECK_NAME,
--                    "status IN ('candidate','approved','active','disabled','rollback')",
-+                    "status IN ('candidate','approved','active','stable','disabled')",
-                 )
- 
++    # Phase2.1 自有扩展：仅调整 release_gate.status 的允许集合与默认值，不触碰 Phase2.0 语义。
+     dialect = bind.dialect.name
+     column_type = _get_column_type(bind, TARGET_TABLE, STATUS_COLUMN)
  
 
 [cmd] git diff HEAD -- docs/Phase2.1_A1_证据包.md
 diff --git "a/docs/Phase2.1_A1_\350\257\201\346\215\256\345\214\205.md" "b/docs/Phase2.1_A1_\350\257\201\346\215\256\345\214\205.md"
-index 5bae470..bfb37f3 100644
+index bfb37f3..5d66664 100644
 --- "a/docs/Phase2.1_A1_\350\257\201\346\215\256\345\214\205.md"
 +++ "b/docs/Phase2.1_A1_\350\257\201\346\215\256\345\214\205.md"
-@@ -1,269 +1,87 @@
--# Phase2.1 A1 证据包（返工版）
-+# Phase2.1 A1 证据包（系统级可验收）
+@@ -2,86 +2,84 @@
  
  ## 模块名称与目标
  - 模块：A1. ReleaseGate 状态扩展（param_version / strategy_runtime_state，Phase 2.1 扩展）
--- 目标：在 A1 范围内完成状态扩展迁移，保持可升级/可降级，并给出可审计原始证据。
-+- 目标：在 A1 允许范围内完成 `release_gate.status` 五态扩展，支持 upgrade/downgrade，可审计证明变更范围。
+-- 目标：在 A1 允许范围内完成 `release_gate.status` 五态扩展，支持 upgrade/downgrade，可审计证明变更范围。
++- 目标：在 A1 允许范围内扩展 `release_gate.status` 五态并保证迁移可升级/可降级。
++- 五态明确为：`candidate | approved | active | stable | disabled`。
++- 明确不存在：`rollback`。
  
  ## 修改/新增文件清单
--- 新增：`alembic/versions/023_phase21_a1_release_gate_status_expand.py`
-+- 修改：`alembic/versions/023_phase21_a1_release_gate_status_expand.py`
+ - 修改：`alembic/versions/023_phase21_a1_release_gate_status_expand.py`
  - 修改：`docs/Phase2.1_A1_证据包.md`
--- 新增：`docs/runlogs/phase21_a1_migration_verify.txt`
--- 新增：`docs/runlogs/phase21_a1_change_scope_git.txt`
--- 新增：`docs/runlogs/phase21_a1_db_before_after.txt`
-+- 修改：`docs/runlogs/phase21_a1_migration_verify.txt`
-+- 修改：`docs/runlogs/phase21_a1_db_before_after.txt`
-+- 修改：`docs/runlogs/phase21_a1_change_scope_git.txt`
++- 修改：`docs/runlogs/phase21_a1_baseline_git.txt`
+ - 修改：`docs/runlogs/phase21_a1_migration_verify.txt`
+ - 修改：`docs/runlogs/phase21_a1_db_before_after.txt`
+ - 修改：`docs/runlogs/phase21_a1_change_scope_git.txt`
  
- ## 唯一真理源逐条对照（A1 原文 -> 证据位置）
--> 引用源：`docs/plan/Phase2.1_模块化开发交付包.md` 的 A1 条目。
-+引用源：`docs/plan/Phase2.1_模块化开发交付包.md` 的 A1 条目。
- 
--1. 原文：
--   - 「在 Phase 2.0 的 strategy_version/param_version 之上支持 ReleaseGate 状态（B.3）：candidate | approved | active | stable | disabled」
-+1. 原文（Goal）：
-+   - `candidate | approved | active | stable | disabled`
-    证据：
--   - 实现文件：`alembic/versions/023_phase21_a1_release_gate_status_expand.py`（`ALLOWED_STATES` + 约束/枚举扩展逻辑）
--   - DB 输出：`docs/runlogs/phase21_a1_db_before_after.txt` 的 `[after] SELECT sql ...`（含状态枚举约束）
-+   - 迁移常量：`alembic/versions/023_phase21_a1_release_gate_status_expand.py` 中 `ALLOWED_STATES = ("candidate", "approved", "active", "stable", "disabled")`
-+   - DB after 结构：`docs/runlogs/phase21_a1_db_before_after.txt` 中 `[after] SELECT sql ...` 包含 `stable`，不包含 `rollback`
- 
--2. 原文：
--   - 「仅在 Phase 2.1 侧扩展状态相关列（如 release_state）；禁止修改 Phase 2.0 已有列语义」
-+2. 原文（Scope）：
-+   - 仅在 2.1 侧扩展状态字段，不修改 2.0 表语义
-    证据：
--   - 变更范围命令输出：`docs/runlogs/phase21_a1_change_scope_git.txt`（`git diff --name-only`、`git diff ...023...`）
--   - 迁移实现仅触达 `release_gate.status`：`alembic/versions/023_phase21_a1_release_gate_status_expand.py`
-+   - 变更路径证明：`docs/runlogs/phase21_a1_change_scope_git.txt` 中 `git diff --name-only HEAD` 仅出现 A1 允许范围文件
- 
--3. 原文：
--   - 「迁移脚本：仅新增 Phase 2.1 自有列或关联表，禁止修改 evaluation_report、metrics_snapshot 及 Phase 2.0 表结构或指标口径」
-+3. 原文（Strong Constraints）：
-+   - 迁移支持 upgrade/downgrade，不破坏已有表
-    证据：
--   - 迁移代码仅处理 `TARGET_TABLE = "release_gate"`、`STATUS_COLUMN = "status"`
--   - 变更范围命令输出：`docs/runlogs/phase21_a1_change_scope_git.txt`
-+   - `docs/runlogs/phase21_a1_migration_verify.txt` 含 `alembic upgrade 022`、`alembic upgrade 023`、`alembic downgrade 022` 原始输出
-+   - before/after 结构完整输出：`docs/runlogs/phase21_a1_db_before_after.txt`
- 
--4. 原文：
--   - 「迁移必须支持 alembic upgrade/downgrade，不破坏已有表」
-+4. 原文（AC）：
-+   - upgrade/downgrade 无报错；状态字段可存储五态；文档明确 2.1 自有扩展
-    证据：
--   - `docs/runlogs/phase21_a1_migration_verify.txt`：包含 `alembic upgrade 022`、`alembic upgrade 023`、`alembic downgrade 022` 原始输出
--   - `docs/runlogs/phase21_a1_db_before_after.txt`：before/after 结构完整输出
+-## 唯一真理源逐条对照（A1 原文 -> 证据位置）
+-引用源：`docs/plan/Phase2.1_模块化开发交付包.md` 的 A1 条目。
 -
--5. 原文（AC）：
--   - 「迁移可重复执行（upgrade/downgrade 无报错，幂等）」
+-1. 原文（Goal）：
+-   - `candidate | approved | active | stable | disabled`
 -   证据：
--   - `docs/runlogs/phase21_a1_migration_verify.txt`
+-   - 迁移常量：`alembic/versions/023_phase21_a1_release_gate_status_expand.py` 中 `ALLOWED_STATES = ("candidate", "approved", "active", "stable", "disabled")`
+-   - DB after 结构：`docs/runlogs/phase21_a1_db_before_after.txt` 中 `[after] SELECT sql ...` 包含 `stable`，不包含 `rollback`
 -
--6. 原文（AC）：
--   - 「表中存在 release_state 或等价字段，可存储 candidate/approved/active/stable/disabled 五态之一」
+-2. 原文（Scope）：
+-   - 仅在 2.1 侧扩展状态字段，不修改 2.0 表语义
 -   证据：
--   - A1 在本仓实现为等价字段 `release_gate.status`
--   - `docs/runlogs/phase21_a1_db_before_after.txt` 的 after DDL 与 PRAGMA 输出
+-   - 变更路径证明：`docs/runlogs/phase21_a1_change_scope_git.txt` 中 `git diff --name-only HEAD` 仅出现 A1 允许范围文件
 -
--7. 原文（AC）：
--   - 「文档或注释明确本扩展为 Phase 2.1 自有，未改动 Phase 2.0 表语义」
+-3. 原文（Strong Constraints）：
+-   - 迁移支持 upgrade/downgrade，不破坏已有表
 -   证据：
--   - 迁移文件头注释与常量命名：`alembic/versions/023_phase21_a1_release_gate_status_expand.py`
--   - 本证据包的“逐条对照 + 变更范围证明”章节
+-   - `docs/runlogs/phase21_a1_migration_verify.txt` 含 `alembic upgrade 022`、`alembic upgrade 023`、`alembic downgrade 022` 原始输出
+-   - before/after 结构完整输出：`docs/runlogs/phase21_a1_db_before_after.txt`
 -
--## 变更范围证明（原始输出）
--原始输出文件：`docs/runlogs/phase21_a1_change_scope_git.txt`
+-4. 原文（AC）：
+-   - upgrade/downgrade 无报错；状态字段可存储五态；文档明确 2.1 自有扩展
+-   证据：
+-   - 迁移原始输出：`docs/runlogs/phase21_a1_migration_verify.txt`
+-   - 字段与约束输出：`docs/runlogs/phase21_a1_db_before_after.txt`
+-   - 本证据包逐条映射章节
 -
--```txt
--[cmd] git status
--On branch main
+-## 变更范围证明（基线 + HEAD diff）
+-原始输出：`docs/runlogs/phase21_a1_change_scope_git.txt`
 -
--No commits yet
+-- 基线步骤（为可审计 HEAD diff）：
+-  - `git add -A`
+-  - `git commit -m "baseline before Phase2.1 A1" || true`
+-- 范围命令（已执行并记录原始输出）：
+-  - `git status`
+-  - `git diff --name-only HEAD`
+-  - `git diff HEAD -- alembic/versions/023_phase21_a1_release_gate_status_expand.py`
+-  - `git diff HEAD -- docs/Phase2.1_A1_证据包.md`
 -
--Untracked files:
--  (use "git add <file>..." to include in what will be committed)
--	.cursor/
--	.cursor_tasks/
--	.dockerignore
--	.enhanced_evidence_monitor.json
--	.env.example
--	.evidence_pack_monitor.json
--	.gitignore
--	Dockerfile
--	README.md
--	alembic.ini
--	alembic/
--	config/
--	docker-compose.yml
--	docs/
--	pyproject.toml
--	scripts/
--	src/
--	tests/
--	trading_system.db.c9_drill_backup
+-## 未跨模块修改证明
+-- 命令：`git diff --name-only HEAD | rg "^(src/models/|src/repositories/)" || true`
+-- 原始输出位置：`docs/runlogs/phase21_a1_change_scope_git.txt`
+-- 结果：无输出（未修改 `models/` 与 `repositories/`）
 -
--nothing added to commit but untracked files present (use "git add" to track)
+-## 数据库真实结构 before/after（完整输出）
+-原始输出：`docs/runlogs/phase21_a1_db_before_after.txt`
 -
--[cmd] git diff --name-only
+-关键核验点：
+-- before 默认值：`'approved'`
+-- after 默认值：`'candidate'`
+-- after CHECK：`('candidate','approved','active','stable','disabled')`
+-- after 输出中不含 `rollback`
 -
--[cmd] git diff alembic/versions/023_phase21_a1_release_gate_status_expand.py
+-## 核心实现代码（A1）
+-文件：`alembic/versions/023_phase21_a1_release_gate_status_expand.py`
 -
--[cmd] cross-module check: git diff --name-only | rg "^(src/models/|src/repositories/)" || true
--```
-+   - 迁移原始输出：`docs/runlogs/phase21_a1_migration_verify.txt`
-+   - 字段与约束输出：`docs/runlogs/phase21_a1_db_before_after.txt`
-+   - 本证据包逐条映射章节
+-关键实现：
+-- `ALLOWED_STATES = ("candidate", "approved", "active", "stable", "disabled")`
+-- PostgreSQL ENUM 路径：`ALTER TYPE ... ADD VALUE IF NOT EXISTS`
+-- VARCHAR 路径：`CHECK status IN ('candidate','approved','active','stable','disabled')`
+-- 默认值：`candidate`
+-- `downgrade()` 保持可执行
+-
+-## 命令与原始输出
+-1. 迁移验证：`docs/runlogs/phase21_a1_migration_verify.txt`
+-2. DB before/after：`docs/runlogs/phase21_a1_db_before_after.txt`
+-3. 变更范围与跨模块自检：`docs/runlogs/phase21_a1_change_scope_git.txt`
+-
+-## 验收结论（A1）
+-- 五态严格为：`candidate | approved | active | stable | disabled`
+-- 默认值为 `candidate`
+-- `rollback` 已从迁移状态集合与 DB CHECK 中移除
+-- 迁移升级/降级可执行
+-- 变更范围可审计，且未跨模块
++## 实际执行命令
++1. 基线可审计命令（写入 `docs/runlogs/phase21_a1_baseline_git.txt`）：
++   - `git status`
++   - `git add -A`
++   - `git commit -m "baseline before Phase2.1 A1" || true`
++   - `git log --oneline -5`
++2. 迁移验证命令（写入 `docs/runlogs/phase21_a1_migration_verify.txt`）：
++   - `alembic upgrade 022`
++   - `alembic upgrade 023`
++   - `alembic downgrade 022`
++3. DB 结构 before/after 命令（写入 `docs/runlogs/phase21_a1_db_before_after.txt`）：
++   - `PRAGMA table_info(release_gate);`
++   - `SELECT sql FROM sqlite_master WHERE name='release_gate';`
++   - 分别在 upgrade 前后执行
++4. 变更范围命令（写入 `docs/runlogs/phase21_a1_change_scope_git.txt`）：
++   - `git status`
++   - `git diff --name-only HEAD`
++   - `git diff HEAD -- alembic/versions/023_phase21_a1_release_gate_status_expand.py`
++   - `git diff HEAD -- docs/Phase2.1_A1_证据包.md`
++   - `git diff --name-only HEAD | rg "^(src/|tests/|config/)" || true`
 +
-+## 变更范围证明（基线 + HEAD diff）
-+原始输出：`docs/runlogs/phase21_a1_change_scope_git.txt`
++## 命令真实输出（原始）
++- 基线输出：`docs/runlogs/phase21_a1_baseline_git.txt`
++- 迁移输出：`docs/runlogs/phase21_a1_migration_verify.txt`
++- DB before/after 输出：`docs/runlogs/phase21_a1_db_before_after.txt`
++- 范围证明输出：`docs/runlogs/phase21_a1_change_scope_git.txt`
 +
-+- 基线步骤（为可审计 HEAD diff）：
-+  - `git add -A`
-+  - `git commit -m "baseline before Phase2.1 A1" || true`
-+- 范围命令（已执行并记录原始输出）：
-+  - `git status`
-+  - `git diff --name-only HEAD`
-+  - `git diff HEAD -- alembic/versions/023_phase21_a1_release_gate_status_expand.py`
-+  - `git diff HEAD -- docs/Phase2.1_A1_证据包.md`
- 
- ## 未跨模块修改证明
--- 证明命令与原始输出：`docs/runlogs/phase21_a1_change_scope_git.txt`
--- 结论依据：
--  - `git diff --name-only` 输出为空。
--  - `git diff --name-only | rg "^(src/models/|src/repositories/)"` 输出为空。
--  - 本次实现文件集中在 A1 迁移与证据材料。
-+- 命令：`git diff --name-only HEAD | rg "^(src/models/|src/repositories/)" || true`
-+- 原始输出位置：`docs/runlogs/phase21_a1_change_scope_git.txt`
-+- 结果：无输出（未修改 `models/` 与 `repositories/`）
- 
- ## 数据库真实结构 before/after（完整输出）
--原始输出文件：`docs/runlogs/phase21_a1_db_before_after.txt`
-+原始输出：`docs/runlogs/phase21_a1_db_before_after.txt`
- 
--```txt
--[before] PRAGMA table_info(release_gate);
--(0, 'id', 'INTEGER', 0, None, 1)
--(1, 'status', 'VARCHAR(20)', 1, "'approved'", 0)
--[before] SELECT sql FROM sqlite_master WHERE name='release_gate';
--("CREATE TABLE release_gate (id INTEGER PRIMARY KEY AUTOINCREMENT, status VARCHAR(20) NOT NULL DEFAULT 'approved')",)
--[after] PRAGMA table_info(release_gate);
--(0, 'id', 'INTEGER', 0, None, 1)
--(1, 'status', 'VARCHAR(20)', 1, "'candidate'", 0)
--[after] SELECT sql FROM sqlite_master WHERE name='release_gate';
--('CREATE TABLE "release_gate" (\n\tid INTEGER, \n\tstatus VARCHAR(20) DEFAULT \'candidate\' NOT NULL, \n\tPRIMARY KEY (id), \n\tCONSTRAINT ck_release_gate_status_phase21_a1 CHECK (status IN (\'candidate\',\'approved\',\'active\',\'disabled\',\'rollback\'))\n)',)
--```
-+关键核验点：
-+- before 默认值：`'approved'`
-+- after 默认值：`'candidate'`
-+- after CHECK：`('candidate','approved','active','stable','disabled')`
-+- after 输出中不含 `rollback`
- 
--## 核心实现代码（完整文件）
-+## 核心实现代码（A1）
- 文件：`alembic/versions/023_phase21_a1_release_gate_status_expand.py`
- 
--```python
--"""Phase2.1 A1: release_gate.status 五态扩展
--
--Revision ID: 023
--Revises: 022
--Create Date: 2026-02-26
--
--目标：
--- 扩展 release_gate.status 可存储五态：
--  candidate | approved | active | disabled | rollback
--- 默认值为 candidate
--- 仅做 A1 状态字段迁移，不改其他模块语义
--"""
--from __future__ import annotations
--
--from alembic import op
--import sqlalchemy as sa
--from sqlalchemy import inspect
--
--revision = "023"
--down_revision = "022"
--branch_labels = None
--depends_on = None
--
--TARGET_TABLE = "release_gate"
--STATUS_COLUMN = "status"
--CHECK_NAME = "ck_release_gate_status_phase21_a1"
--ALLOWED_STATES = ("candidate", "approved", "active", "disabled", "rollback")
--
--
--def _table_exists(bind: sa.engine.Connection, table_name: str) -> bool:
--    return table_name in inspect(bind).get_table_names()
--
--
--def _column_exists(bind: sa.engine.Connection, table_name: str, column_name: str) -> bool:
--    columns = inspect(bind).get_columns(table_name)
--    return any(col["name"] == column_name for col in columns)
--
--
--def _get_column_type(bind: sa.engine.Connection, table_name: str, column_name: str):
--    for col in inspect(bind).get_columns(table_name):
--        if col["name"] == column_name:
--            return col["type"]
--    return None
--
--
--def _check_exists(bind: sa.engine.Connection, table_name: str, check_name: str) -> bool:
--    checks = inspect(bind).get_check_constraints(table_name)
--    return any(chk.get("name") == check_name for chk in checks)
--
--
--def _is_enum_type(column_type: object) -> bool:
--    enums = getattr(column_type, "enums", None)
--    return isinstance(enums, (list, tuple))
--
--
--def _quote_ident(value: str) -> str:
--    return '"' + value.replace('"', '""') + '"'
--
--
--def _upgrade_postgres_enum(bind: sa.engine.Connection, column_type: object) -> None:
--    enum_name = getattr(column_type, "name", None)
--    enum_schema = getattr(column_type, "schema", None)
--    existing_values = set(getattr(column_type, "enums", []) or [])
--    if not enum_name:
--        return
--
--    qualified_enum_name = _quote_ident(enum_name)
--    if enum_schema:
--        qualified_enum_name = f"{_quote_ident(enum_schema)}.{qualified_enum_name}"
--
--    for state in ALLOWED_STATES:
--        if state in existing_values:
--            continue
--        op.execute(f"ALTER TYPE {qualified_enum_name} ADD VALUE IF NOT EXISTS '{state}'")
--
--
--def upgrade() -> None:
--    bind = op.get_bind()
--    if not _table_exists(bind, TARGET_TABLE):
--        return
--    if not _column_exists(bind, TARGET_TABLE, STATUS_COLUMN):
--        return
--
--    dialect = bind.dialect.name
--    column_type = _get_column_type(bind, TARGET_TABLE, STATUS_COLUMN)
--
--    if dialect == "postgresql" and _is_enum_type(column_type):
--        _upgrade_postgres_enum(bind, column_type)
--        op.execute(
--            f"ALTER TABLE {TARGET_TABLE} ALTER COLUMN {STATUS_COLUMN} SET DEFAULT 'candidate'"
--        )
--    else:
--        with op.batch_alter_table(TARGET_TABLE) as batch_op:
--            batch_op.alter_column(
--                STATUS_COLUMN,
--                existing_type=column_type if column_type is not None else sa.String(length=32),
--                server_default=sa.text("'candidate'"),
--            )
--            if not _check_exists(bind, TARGET_TABLE, CHECK_NAME):
--                batch_op.create_check_constraint(
--                    CHECK_NAME,
--                    "status IN ('candidate','approved','active','disabled','rollback')",
--                )
--
--
--def downgrade() -> None:
--    bind = op.get_bind()
--    if not _table_exists(bind, TARGET_TABLE):
--        return
--    if not _column_exists(bind, TARGET_TABLE, STATUS_COLUMN):
--        return
--
--    dialect = bind.dialect.name
--    column_type = _get_column_type(bind, TARGET_TABLE, STATUS_COLUMN)
--
--    if dialect == "postgresql" and _is_enum_type(column_type):
--        op.execute(
--            f"ALTER TABLE {TARGET_TABLE} ALTER COLUMN {STATUS_COLUMN} DROP DEFAULT"
--        )
--    else:
--        with op.batch_alter_table(TARGET_TABLE) as batch_op:
--            if _check_exists(bind, TARGET_TABLE, CHECK_NAME):
--                batch_op.drop_constraint(CHECK_NAME, type_="check")
--            batch_op.alter_column(
--                STATUS_COLUMN,
--                existing_type=column_type if column_type is not None else sa.String(length=32),
--                server_default=None,
--            )
--```
--
--## 实际执行命令与原始输出位置
--- 迁移验证命令与原始输出：`docs/runlogs/phase21_a1_migration_verify.txt`
--- 变更范围命令与原始输出：`docs/runlogs/phase21_a1_change_scope_git.txt`
--- DB before/after 结构命令与原始输出：`docs/runlogs/phase21_a1_db_before_after.txt`
--
--## 与 A1 Acceptance Criteria 逐条对照
--- [x] 迁移可重复执行（upgrade/downgrade 无报错，幂等）
--  - 证据：`docs/runlogs/phase21_a1_migration_verify.txt`
--- [x] 表中存在 release_state 或等价字段，可存储五态之一
--  - 证据：`release_gate.status` 作为等价字段；`docs/runlogs/phase21_a1_db_before_after.txt` after 输出
--- [x] 文档或注释明确本扩展为 Phase 2.1 自有，未改动 Phase 2.0 表语义
--  - 证据：迁移文件注释 + 本证据包逐条映射
--
--## 验收结论
--- A1 模块证据包已按阶段要求补齐：原文逐条映射、变更范围原始输出、跨模块自检、DB before/after 完整输出。
-+关键实现：
-+- `ALLOWED_STATES = ("candidate", "approved", "active", "stable", "disabled")`
-+- PostgreSQL ENUM 路径：`ALTER TYPE ... ADD VALUE IF NOT EXISTS`
-+- VARCHAR 路径：`CHECK status IN ('candidate','approved','active','stable','disabled')`
-+- 默认值：`candidate`
-+- `downgrade()` 保持可执行
++## 唯一真理源逐条对照（A1）
++来源：`docs/plan/Phase2.1_模块化开发交付包.md` A1 条目。
 +
-+## 命令与原始输出
-+1. 迁移验证：`docs/runlogs/phase21_a1_migration_verify.txt`
-+2. DB before/after：`docs/runlogs/phase21_a1_db_before_after.txt`
-+3. 变更范围与跨模块自检：`docs/runlogs/phase21_a1_change_scope_git.txt`
++1. A1 五态：`candidate | approved | active | stable | disabled`
++- 证据片段：
++  - `phase21_a1_migration_verify.txt` 中 `after_upgrade_release_gate_sql= ... CHECK ... ('candidate','approved','active','stable','disabled')`
++  - `phase21_a1_db_before_after.txt` 中 `[after] SELECT sql ...` 同样包含 `stable`
++  - 同两份输出均不含 `rollback` 于允许集合
 +
-+## 验收结论（A1）
-+- 五态严格为：`candidate | approved | active | stable | disabled`
-+- 默认值为 `candidate`
-+- `rollback` 已从迁移状态集合与 DB CHECK 中移除
-+- 迁移升级/降级可执行
-+- 变更范围可审计，且未跨模块
++2. 默认值为 `candidate`
++- 证据片段：
++  - `phase21_a1_migration_verify.txt` 中 `after_upgrade_table_info` 行：`(1, 'status', 'VARCHAR(20)', 1, "'candidate'", 0)`
++  - `phase21_a1_db_before_after.txt` 中 `[after] PRAGMA table_info(release_gate)` 同样显示默认值 `candidate`
++
++3. 迁移支持 upgrade/downgrade
++- 证据片段：
++  - `phase21_a1_migration_verify.txt` 中：
++    - `Running upgrade 021 -> 022`
++    - `Running upgrade 022 -> 023`
++    - `Running downgrade 023 -> 022`
++
++4. Phase2.1 自有扩展，不改变 Phase2.0 语义
++- 证据片段：
++  - `alembic/versions/023_phase21_a1_release_gate_status_expand.py` 注释：
++    - `Phase2.1 自有扩展：仅调整 release_gate.status 的允许集合与默认值，不触碰 Phase2.0 语义。`
++  - `phase21_a1_change_scope_git.txt` 中 `git diff --name-only HEAD` 仅出现 A1 范围文件。
++
++## 与 A1 Acceptance Criteria 逐条对照
++- AC1：迁移可重复执行（upgrade/downgrade 无报错）
++  - 证据：`docs/runlogs/phase21_a1_migration_verify.txt` 片段 `Running upgrade 022 -> 023`、`Running downgrade 023 -> 022`
++- AC2：存在可存储五态的状态字段
++  - 证据：`docs/runlogs/phase21_a1_db_before_after.txt` `[after] SELECT sql ... CHECK (status IN ('candidate','approved','active','stable','disabled'))`
++- AC3：明确为 Phase2.1 扩展，未改 Phase2.0 语义
++  - 证据：迁移文件注释 + `docs/runlogs/phase21_a1_change_scope_git.txt` 的路径范围输出
++
++## 跨模块修改自检
++- 检查命令：`git diff --name-only HEAD | rg "^(src/|tests/|config/)" || true`
++- 原始输出：`docs/runlogs/phase21_a1_change_scope_git.txt`
++- 结果：无输出（未触发 `src/` `tests/` `config/` 路径变更）
++
++## 验收结论
++- A1 验收通过：五态为 `candidate/approved/active/stable/disabled`，默认值 `candidate`，不存在 `rollback`，迁移 upgrade/downgrade 可执行，且变更范围可审计。
 
-[cmd] cross-module check: git diff --name-only HEAD | rg "^(src/models/|src/repositories/)" || true
+[cmd] git diff --name-only HEAD | rg "^(src/|tests/|config/)" || true

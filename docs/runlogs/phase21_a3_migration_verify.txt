@@ -1,0 +1,53 @@
+[env] DATABASE_URL=sqlite+aiosqlite:////tmp/phase21_a3_migration_verify.db
+[cmd] reset db
+removed_old_db /tmp/phase21_a3_migration_verify.db
+[cmd] alembic upgrade 024
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade  -> 001, Initial schema for PR2 (dedup_signal, decision_order_map, orders)
+INFO  [alembic.runtime.migration] Running upgrade 001 -> 002, PR6: decision_order_map 执行层扩展字段
+INFO  [alembic.runtime.migration] Running upgrade 002 -> 003, decision_order_map.quantity 改为 Numeric(20, 8)
+INFO  [alembic.runtime.migration] Running upgrade 003 -> 004, PR8: execution_events 表
+INFO  [alembic.runtime.migration] Running upgrade 004 -> 005, PR8 审阅：execution_events (decision_id, created_at) 复合索引
+INFO  [alembic.runtime.migration] Running upgrade 005 -> 006, PR9: balances, positions, risk_state 表
+INFO  [alembic.runtime.migration] Running upgrade 006 -> 007, PR11: positions 表增加 strategy_id，主键改为 (strategy_id, symbol)，按策略隔离
+INFO  [alembic.runtime.migration] Running upgrade 007 -> 008, PR13: execution_events 增加 account_id / exchange_profile / dry_run
+INFO  [alembic.runtime.migration] Running upgrade 008 -> 009, PR14a: rate_limit_state, circuit_breaker_state 表 + execution_events.live_enabled
+INFO  [alembic.runtime.migration] Running upgrade 009 -> 010, PR16: execution_events.rehearsal（演练模式追溯）
+INFO  [alembic.runtime.migration] Running upgrade 010 -> 011, PR2 封版补齐：trade 表（交易记录表）
+INFO  [alembic.runtime.migration] Running upgrade 011 -> 012, PR2/MVP 封版补齐：dedup_signal.processed 字段
+INFO  [alembic.runtime.migration] Running upgrade 012 -> 013, A1: strategy_runtime_state 互斥锁字段 + TTL 支撑
+INFO  [alembic.runtime.migration] Running upgrade 013 -> 014, A2: trade 表 EXTERNAL_SYNC 来源支持（幂等键 strategy_id + external_trade_id）
+INFO  [alembic.runtime.migration] Running upgrade 014 -> 015, A3: position_reconcile_log 表（external_trade_id + event_type 封闭枚举）
+INFO  [alembic.runtime.migration] Running upgrade 015 -> 016, C3: position_reconcile_log 增加 price_tier 列（定价档位落盘可追溯）
+INFO  [alembic.runtime.migration] Running upgrade 016 -> 017, C5: strategy_runtime_state.status, position_reconcile_log.diff_snapshot, signal_rejection 表
+INFO  [alembic.runtime.migration] Running upgrade 017 -> 018, Phase1.2 A1: decision_snapshot 表（决策输入快照，落实 0.4）
+INFO  [alembic.runtime.migration] Running upgrade 018 -> 019, Phase1.2 A2: log 表（审计/操作/错误日志）
+INFO  [alembic.runtime.migration] Running upgrade 019 -> 020, Phase1.2 A3: perf_log 表（性能日志，1.2b）
+INFO  [alembic.runtime.migration] Running upgrade 020 -> 021, Phase2.0 A1: metrics_snapshot 表（指标快照，Phase 2.0 自有）
+INFO  [alembic.runtime.migration] Running upgrade 021 -> 022, Phase2.0 A2: evaluation_report 表（评估报告，满足 0.2，Phase 2.0 自有）
+INFO  [alembic.runtime.migration] Running upgrade 022 -> 023, Phase2.1 A1: release_gate.status 五态扩展
+INFO  [alembic.runtime.migration] Running upgrade 023 -> 024, Phase2.1 A2: release_audit 表创建（Phase2.1 自有，按 C.2）
+[cmd] alembic upgrade 025
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade 024 -> 025, Phase2.1 A3: learning_audit 表创建（Phase2.1 自有）
+[cmd] PRAGMA table_info(learning_audit)
+(0, 'id', 'BIGINT', 1, None, 1)
+(1, 'strategy_id', 'VARCHAR(255)', 1, None, 0)
+(2, 'evaluation_report_id', 'VARCHAR(255)', 0, None, 0)
+(3, 'param_version_id_candidate', 'VARCHAR(255)', 0, None, 0)
+(4, 'suggested_params', 'JSONB', 0, None, 0)
+(5, 'created_at', 'DATETIME', 1, 'CURRENT_TIMESTAMP', 0)
+[cmd] SELECT sql FROM sqlite_master WHERE type='table' AND name='learning_audit'
+('CREATE TABLE learning_audit (\n\tid BIGINT NOT NULL, \n\tstrategy_id VARCHAR(255) NOT NULL, \n\tevaluation_report_id VARCHAR(255), \n\tparam_version_id_candidate VARCHAR(255), \n\tsuggested_params JSONB, \n\tcreated_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL, \n\tPRIMARY KEY (id)\n)',)
+[cmd] SELECT name, sql FROM sqlite_master WHERE type='index' AND tbl_name='learning_audit' ORDER BY name
+('idx_learning_audit_created_at', 'CREATE INDEX idx_learning_audit_created_at ON learning_audit (created_at)')
+('idx_learning_audit_evaluation_report_id', 'CREATE INDEX idx_learning_audit_evaluation_report_id ON learning_audit (evaluation_report_id)')
+('idx_learning_audit_param_version_id_candidate', 'CREATE INDEX idx_learning_audit_param_version_id_candidate ON learning_audit (param_version_id_candidate)')
+('idx_learning_audit_strategy_id', 'CREATE INDEX idx_learning_audit_strategy_id ON learning_audit (strategy_id)')
+('sqlite_autoindex_learning_audit_1', None)
+[cmd] alembic downgrade 024
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running downgrade 025 -> 024, Phase2.1 A3: learning_audit 表创建（Phase2.1 自有）

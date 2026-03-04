@@ -81,6 +81,7 @@ def upgrade() -> None:
     if not _column_exists(bind, TARGET_TABLE, STATUS_COLUMN):
         return
 
+    # Phase2.1 自有扩展：仅调整 release_gate.status 的允许集合与默认值，不触碰 Phase2.0 语义。
     dialect = bind.dialect.name
     column_type = _get_column_type(bind, TARGET_TABLE, STATUS_COLUMN)
 
